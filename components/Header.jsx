@@ -60,13 +60,13 @@ export default function Header() {
         ></div>
         
         {/* Menu bar */}
-        <div className='absolute z-40 bg-yellow-50 w-full text-18 flex justify-between items-center px-6 md:px-16 py-4 md:py-6 border-b border-gray-300'>
+        <div className='bg-yellow-50 w-full text-18 flex justify-between items-center px-6 md:px-16 py-4 md:py-6 border-b border-gray-300'>
             {/* logo */}
             <div className='w-[140px] lg:w-[255px] h-14 flex items-center'>
                 <h3 className='text-21'> Enomarket.eu </h3>
             </div>
             {/* Links */}
-            <div className='hidden lg:flex items-center gap-x-8'>
+            <div className='z-50 hidden lg:flex items-center gap-x-8'>
                 <div className='relative'>
                     <button 
                         onMouseEnter={() => toggleButtonProducts('enter')} 

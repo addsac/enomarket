@@ -1,18 +1,49 @@
-import Layout from "./Layout";
+import ButtonSecondary from './ui/ButtonSecondary'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export default function Slider() {
   return (
     <div className='relative w-screen h-[calc(100vh-40px)]'>
-        {/* gradient */}
-        <div className="absolute gradient-left w-[500px] h-full"></div>
 
-        <Layout>
-          <div className="col-span-12 flex flex-col justify-end h-full w-full z-10">
-            <p> Birre </p>
-            <p> Le Migliori Birre da tutta Italia </p>
-            <p> Birre </p>
-          </div>
-        </Layout>
+        <div className="z-10 absolute bottom-[40px] lg:bottom-[100px] right-[24px] lg:right-[100px]">
+          <div className="pagination flex"></div>
+        </div>
+
+        <Swiper
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            el: '.pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return `<span class="swiper-pagination-bullet"></span>`
+            },
+          }}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide className='relative bg-yellow-900'>
+            {/* gradient left */}
+            <div className="absolute z-[-1] top-0 bottom-0 w-[500px] bg-gradient-to-r from-gray-900/80 to-transparent"></div>
+
+            <div className="w-full h-full grid grid-cols-12 gap-x-[17px] md:gap-x-6 px-6 md:px-16 pb-[40px] lg:pb-[100px]">
+              <div className="col-span-12 lg:col-span-6 h-full flex flex-col justify-end gap-y-10">
+                <p className='uppercase text-16 lg:text-18 font-familiy-monserrat font-medium text-yellow-400'> Birre </p>
+                <p className='text-44 lg:text-78 font-family-lora text-white leading-[130%]'> Le Migliori Birre da Tutta Italia</p>
+                <div>
+                  <ButtonSecondary
+                    text='Vedi i marchi'
+                  />
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
     </div>
   )
 }
