@@ -99,7 +99,7 @@ export default function Header() {
             <div className='flex items-center gap-x-4 lg:gap-x-8'>
                 {/* Button mobile menu */}
                 <button onClick={() => toggleModalMobile()} className='lg:hidden group button-icon'>
-                    <span className='h-6 w-6 stroke-[1.5] stroke-gray-900'>
+                    <span className='h-5 w-5 stroke-[1.5] stroke-gray-900'>
                         <IconMenu />
                     </span>
                 </button>

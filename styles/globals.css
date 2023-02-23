@@ -37,3 +37,6 @@ button{
 .swiper-pagination-bullet{
     @apply !w-[10px] !h-[10px] !bg-white;
 }
+p{
+    @apply leading-[170%] text-gray-900;
+}
