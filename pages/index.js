@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '@/components/Layout'
+import Slider from '@/components/Slider'
 
 export default function Home() {
   return (
@@ -11,9 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Layout>
-          
-        </Layout>
+        <Slider />
       </main>
     </>
   )

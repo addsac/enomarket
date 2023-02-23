@@ -14,13 +14,20 @@ button{
     @apply underline-offset-[3px] hover:underline;
 }
 .button-primary{
-    @apply text-14 font-medium uppercase bg-gray-900 text-white hover:text-gray-900 hover:bg-transparent border border-white hover:border-gray-900 px-10 py-5 rounded-[10px] transition;
+    @apply text-12 lg:text-14 font-medium uppercase bg-gray-900 text-white hover:text-gray-900 hover:bg-transparent border border-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
 .button-secondary{
-    @apply text-14 font-medium uppercase bg-yellow-400 text-gray-900 hover:bg-yellow-300 px-10 py-5 rounded-[10px] transition;
+    @apply text-12 lg:text-14 font-medium uppercase bg-yellow-400 text-gray-900 hover:bg-yellow-300 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
+}
+.button-icon{
+    @apply w-12 h-12 rounded-lg flex-center border border-gray-900;
 }
 
 /* utility */
 .flex-center{
     @apply flex items-center justify-center;
+}
+.gradient-left{
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.8) 0%, rgba(17, 24, 39, 0) 100%);
+    opacity: 0.6;
 }
