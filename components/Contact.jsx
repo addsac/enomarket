@@ -10,7 +10,7 @@ export default function Contact() {
   const email = useRef()
   const message = useRef()
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState('false')
   const [modalSuccessBool, setModalSuccessBool] =  useState(false)
 
   const validateEmail = (email) => {
@@ -52,7 +52,7 @@ export default function Contact() {
   const submitForm = () => {
     if(!checkForm()) return
 
-    setLoading(true)
+    setLoading('true')
 
     if(fullname.current.value !== '' && companyName.current.value !== '' && email.current.value !== '' && message.current.value !== '') {
       const data = {
@@ -75,7 +75,7 @@ export default function Contact() {
 
         setTimeout(() => {
           setModalSuccessBool(true)
-          setLoading(false)
+          setLoading('false')
         }, 3000)
       })
     }
@@ -132,7 +132,7 @@ export default function Contact() {
                 handleClick={() => submitForm()}
                 text='Invia il Messaggio'
                 size='lg'
-                loading={loading}
+                loading={loading.toString()}
                 disabled={loading}
               />
               <p className="text-center text-14 text-gray-500">

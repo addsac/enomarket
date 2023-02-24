@@ -1,7 +1,7 @@
 import Link from "next/link";
 import IconLoading from "../../public/icons/icon-loading.svg";
 
-export default function ButtonPrimary({ text, href, size, handleClick, loading = false }) {
+export default function ButtonPrimary({ text, href, size, handleClick, loading = 'false' }) {
   return (
     <>
       { href && (
@@ -19,14 +19,14 @@ export default function ButtonPrimary({ text, href, size, handleClick, loading =
       { !href && 
         <button 
           onClick={handleClick}
-          loading={loading}
           className={`
             font-family-montserrat tracking-wider
-            ${loading ? 'button-primary-loading' : 'button-primary'}
+            ${loading == 'true' ? 'button-primary-loading' : 'button-primary'}
             ${size == 'lg' ? 'min-h-[64px] lg:min-h-[80px]' : ''}
           `}
+          disabled={loading == 'true' ? true : false}
         >
-          {loading ? (
+          {loading == 'true' ? (
             <div className="flex-center">
               <span className="animate-spin">
                 <IconLoading />

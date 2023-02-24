@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '@/components/Header'
 import Slider from '@/components/Slider'
 import Story from '@/components/Story'
 import Spacing from '@/components/Spacing'
@@ -6,8 +7,8 @@ import GeneralInfo from '@/components/GeneralInfo'
 import Products from '@/components/Products'
 import Services from '@/components/Services'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 import { getSlider, getProducts } from '../lib/api'
-import Header from '@/components/Header'
 
 export default function Home({ sliderData, productsData }) {
   return (
@@ -72,11 +73,12 @@ export default function Home({ sliderData, productsData }) {
         <Spacing height={125} />
 
         <Contact />
-
-        <Spacing height={125} />
-        <Spacing height={125} />
-
       </main>
+
+      <Spacing height={125} />
+      <Spacing height={125} />
+
+        <Footer products={productsData} />
     </>
   )
 }

@@ -86,7 +86,11 @@ export default function Header({ products }) {
                         onMouseLeave={() => toggleButtonProducts('leave')} 
                     >
                         {products.map( product => (
-                            <Link href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded"> 
+                            <Link 
+                                key={'header-list-' + product.sys.id}
+                                href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} 
+                                className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded"
+                            > 
                                 { product.fields.nome } 
                             </Link> 
                         ))}
