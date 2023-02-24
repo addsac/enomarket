@@ -16,11 +16,30 @@ button{
 .button-primary{
     @apply text-12 lg:text-14 font-medium uppercase bg-gray-900 text-white hover:text-gray-900 hover:bg-transparent border border-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
+.button-primary-loading{
+    @apply text-12 lg:text-14 font-medium uppercase bg-gray-500 text-white border border-gray-500 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
+}
 .button-secondary{
     @apply text-12 lg:text-14 font-medium uppercase bg-yellow-400 text-gray-900 hover:bg-yellow-300 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
 .button-icon{
     @apply w-12 h-12 rounded-lg flex-center border border-gray-900;
+}
+
+/* text */
+.text-link-contact{
+    @apply text-gray-700 hover:underline underline-offset-2 hover:text-gray-900;
+}
+.text-decoration-wide{
+    @apply text-14 uppercase font-medium tracking-wider;
+}
+
+/* input */
+.input-contact-form{
+    @apply text-21 lg:text-25 text-gray-900 placeholder:text-gray-900/30 p-4 lg:p-6 bg-transparent border border-gray-400 rounded-none focus:outline-none autofill:bg-yellow-50;
+}
+.textarea-contact-form{
+    @apply min-h-[170px] text-21 lg:text-25 text-gray-900 placeholder:text-gray-900/30 p-4 lg:p-6 bg-transparent border border-gray-400 rounded-none focus:outline-none autofill:bg-yellow-50;
 }
 
 /* utility */

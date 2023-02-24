@@ -1,10 +1,11 @@
 import IconChevDown from '@/public/icons/chev-down.svg'
 import IconMenu from '@/public/icons/menu.svg'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
+import Link from 'next/link'
 import { useDetectClickOutside } from 'react-detect-click-outside'
 import { useRef } from 'react'
 
-export default function Header() {
+export default function Header({ products }) {
 
   const closeDropdown = () => {
         const el = document.querySelector('#button-product-dialog')
@@ -84,12 +85,11 @@ export default function Header() {
                         className='opacity-0 -translate-y-2 w-[200px] hidden flex-col gap-y-1 p-2 bg-gray-900 absolute left-1/2 top-100 -mt-[2px] [transform:translateX(-50%)] rounded-lg transition duration-150'
                         onMouseLeave={() => toggleButtonProducts('leave')} 
                     >
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Vino</button>
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Birre</button>
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Spirits</button>
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Bibite</button>
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Acqua</button>
-                        <button className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded">Succhi</button>
+                        {products.map( product => (
+                            <Link href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} className="px-[16px] py-[6px] text-16 text-left text-white hover:text-gray-900 hover:bg-yellow-50 rounded"> 
+                                { product.fields.nome } 
+                            </Link> 
+                        ))}
                     </div>
                 </div>
                 <button className='button-text'>Attrezzature</button>

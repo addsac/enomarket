@@ -7,11 +7,9 @@ import Products from '@/components/Products'
 import Services from '@/components/Services'
 import Contact from '@/components/Contact'
 import { getSlider, getProducts } from '../lib/api'
+import Header from '@/components/Header'
 
 export default function Home({ sliderData, productsData }) {
-
-  console.log(productsData)
-
   return (
     <>
       <Head>
@@ -20,6 +18,9 @@ export default function Home({ sliderData, productsData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header products={productsData} />
+
       <main>
         <Slider sliderData={ sliderData } />
 
@@ -71,6 +72,9 @@ export default function Home({ sliderData, productsData }) {
         <Spacing height={125} />
 
         <Contact />
+
+        <Spacing height={125} />
+        <Spacing height={125} />
 
       </main>
     </>

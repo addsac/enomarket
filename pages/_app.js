@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import { Montserrat, Lora, Open_Sans  } from '@next/font/google'
-import Header from '@/components/Header'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 const lora = Lora({ subsets: ['latin'] })
@@ -19,7 +18,6 @@ export default function App({ Component, pageProps }) {
         font-family: ${lora.style.fontFamily};
       }
     `}</style>
-    <Header />
     <Component {...pageProps}  />
   </>
 }
