@@ -104,7 +104,9 @@ export default function Header() {
                     </span>
                 </button>
                 <button className='hidden lg:block button-text'>Shop</button>
-                <ButtonPrimary />
+                <ButtonPrimary
+                    text="Contattaci" 
+                />
             </div>
         </div>
     </>

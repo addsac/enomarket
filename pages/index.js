@@ -3,9 +3,15 @@ import Slider from '@/components/Slider'
 import Story from '@/components/Story'
 import Spacing from '@/components/Spacing'
 import GeneralInfo from '@/components/GeneralInfo'
-import { getSlider } from '../lib/api'
+import Products from '@/components/Products'
+import Services from '@/components/Services'
+import Contact from '@/components/Contact'
+import { getSlider, getProducts } from '../lib/api'
 
-export default function Home({ sliderData }) {
+export default function Home({ sliderData, productsData }) {
+
+  console.log(productsData)
+
   return (
     <>
       <Head>
@@ -47,6 +53,25 @@ export default function Home({ sliderData }) {
 
         <Spacing height={125} />
 
+        <Products 
+          subtitle="I nostri Prodotti"
+          title="Vedi i marchi dei nostri prodotti disponibili"
+          description="Selezioniamo con cura i migliori prodotti da tutto il mondo per permette di creare nei locali Italiani una carta dei vini e bevande completa e apprezzabile, rendendo unica l’esperienza dei nostri clienti e dei loro locali."
+          array={productsData}
+        />
+
+        <Spacing height={125} />
+
+        <Services 
+          subtitle="I Serivizi"
+          title="I nostri Servizi e consulenze per il mondo Horeca"
+          description="La capacità di seguire i bisogni del cliente sin dalla progettazione,la professionalità di un servizio efficiente, la competenza di professionisti per dare il massimo al successo del tuo locale."
+        />
+
+        <Spacing height={125} />
+
+        <Contact />
+
       </main>
     </>
   )
@@ -54,8 +79,9 @@ export default function Home({ sliderData }) {
 
 export async function getStaticProps() {
   const sliderData = (await getSlider()) ?? []
+  const productsData = (await getProducts()) ?? []
 
   return {
-    props: { sliderData },
+    props: { sliderData, productsData },
   }
 }

@@ -2,6 +2,7 @@ import Container from '@/components/Container'
 import ButtonChevron from './ui/ButtonChevron'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Grid, Navigation } from 'swiper'
+import Image from 'next/image'
 
 import 'swiper/css'
 import 'swiper/css/grid'
@@ -78,9 +79,9 @@ export default function Story() {
                     modules={[Grid, Navigation]}
                     className="mySwiper w-full"
                 >
-                    {imagesSwiperGrid.map(item => (
+                    {imagesSwiperGrid.map((item, index) => (
                         <SwiperSlide className='h-full bg-gray-100 !mt-0'>
-                            <img src={item} alt="" className='w-full h-full object-cover' />
+                            <Image src={item} alt={'Enomarket story ' + index} width='600' height='600' className='w-full h-full object-cover' />
                         </SwiperSlide>
                     ))}
                 </Swiper>
