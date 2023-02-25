@@ -96,8 +96,8 @@ export default function Header({ products }) {
                         ))}
                     </div>
                 </div>
-                <button className='button-text'>Attrezzature</button>
-                <button className='button-text'>Impianti</button>
+                <Link href='/servizi/noleggio-attrezzature' className='button-text'>Attrezzature</Link>
+                <Link href='/servizi/impianti-di-spillatura' className='button-text'>Impianti di spillatura</Link>
             </div>
             {/* Buttons */}
             <div className='flex items-center gap-x-4 lg:gap-x-8'>
@@ -110,6 +110,7 @@ export default function Header({ products }) {
                 <button className='hidden lg:block button-text'>Shop</button>
                 <ButtonPrimary
                     text="Contattaci" 
+                    href="/contatti"
                 />
             </div>
         </div>

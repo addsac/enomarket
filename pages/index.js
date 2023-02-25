@@ -78,7 +78,7 @@ export default function Home({ sliderData, productsData }) {
       <Spacing height={125} />
       <Spacing height={125} />
 
-        <Footer products={productsData} />
+      <Footer products={productsData} />
     </>
   )
 }
