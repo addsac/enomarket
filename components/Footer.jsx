@@ -13,7 +13,7 @@ export default function Footer({ products }) {
                         <p className="text-decoration-wide font-family-montserrat text-white"> Prodotti </p>
                         <div className="flex flex-col gap-y-4">
                             { products.map((product) => (
-                                <Link href={'/'+product.fields.nome.replace(' ', '-').trim()} className="text-16 text-gray-400 hover:text-white"> 
+                                <Link key={'footer-product-link-'+product.sys.id} href={'/'+product.fields.nome.replace(' ', '-').trim()} className="text-16 text-gray-400 hover:text-white"> 
                                     { product.fields.nome } 
                                 </Link>
                             ))}

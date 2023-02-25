@@ -22,13 +22,13 @@ export default function ServicePhotoDescription({ title = '', description = '', 
                             <p className="text-21 lg:text-25 font-family-lora">
                                 { item.title }
                             </p>
-                            <div className='flex flex-col gap-y-2'>
+                            <ul className='flex flex-col gap-y-2 list-disc pl-4'>
                                 {item.description.map(( text ) => (
-                                    <p className="text-16 text-gray-700 leading-[170%]">
+                                    <li key={'servizi-list-'+text.replace(' ', '-')} className="text-16 text-gray-700 leading-[170%]">
                                         { text }
-                                    </p> 
+                                    </li> 
                                 ))}
-                            </div>
+                            </ul>
                         </div>
                     ))}
                 </div>
