@@ -16,7 +16,7 @@ export default function OtherPageHeading({ title = '', description = '', categor
                 { links.map((link, index) => (
                     <>
                         { index != links.length - 1 
-                            ? <Link href={link.href} className="text-gray-700"> {link.label} </Link> 
+                            ? <Link href={link.href} className="text-gray-700 button-text"> {link.label} </Link> 
                             : <p className="text-gray-500"> {link.label} </p> }
 
                         { index != links.length - 1 && <div className="text-gray-500"> / </div> }
