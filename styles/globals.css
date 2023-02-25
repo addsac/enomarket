@@ -4,23 +4,41 @@
 
 html{
     @apply text-gray-900 bg-yellow-50;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
+
+@media (hover: hover) {
+    /* when hover is supported */
+    .button-text{
+        @apply hover:underline;
+    }
+    .button-primary{
+        @apply hover:text-gray-900 hover:bg-transparent;
+    }
+    .button-secondary{
+        @apply hover:bg-yellow-300;
+    }
+    .text-link-contact{
+        @apply hover:underline hover:text-gray-900;
+    }
+  }
 
 /* button */
 button{
     @apply disabled:opacity-50 disabled:cursor-not-allowed;
 }
 .button-text{
-    @apply underline-offset-[3px] hover:underline;
+    @apply underline-offset-[3px];
 }
 .button-primary{
-    @apply text-12 lg:text-14 font-medium uppercase bg-gray-900 text-white hover:text-gray-900 hover:bg-transparent border border-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
+    @apply text-12 lg:text-14 font-medium uppercase bg-gray-900 text-white border border-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
 .button-primary-loading{
     @apply text-12 lg:text-14 font-medium uppercase bg-gray-900 text-white border border-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
 .button-secondary{
-    @apply text-12 lg:text-14 font-medium uppercase bg-yellow-400 text-gray-900 hover:bg-yellow-300 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
+    @apply text-12 lg:text-14 font-medium uppercase bg-yellow-400 text-gray-900 px-[28px] lg:px-10 h-12 lg:h-auto lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
 .button-icon{
     @apply w-12 h-12 rounded-lg flex-center border border-gray-900;
@@ -28,7 +46,7 @@ button{
 
 /* text */
 .text-link-contact{
-    @apply text-gray-700 hover:underline underline-offset-2 hover:text-gray-900;
+    @apply text-gray-700 underline-offset-2;
 }
 .text-decoration-wide{
     @apply text-14 uppercase font-medium tracking-wider;
