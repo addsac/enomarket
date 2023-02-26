@@ -5,6 +5,7 @@ import Container from '@/components/Container'
 import OtherPageHeading from '@/components/OtherPageHeading'
 import GridDetails from '@/components/GridDetails'
 import ServicePhotoDescription from '@/components/ServicePhotoDescription'
+import SliderNoleggioAttrezzature from '@/components/SliderNoleggioAttrezzature'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import { getProducts } from '@/lib/api'
@@ -103,6 +104,10 @@ export default function NoleggioAttrezzature({ productsData }) {
             order={2}
           />
         </Container>
+
+        <Spacing height={125} />
+
+        <SliderNoleggioAttrezzature />
 
         <Spacing height={125} />
 

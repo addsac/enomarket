@@ -5,7 +5,7 @@ export default function ButtonChevron({ orientation = '', id }) {
   return (
     <button 
       id={id ?? ''}
-      className='w-12 h-12 rounded-full border border-gray-300 hover:border-gray-900 text-gray-900 flex-center'
+      className='w-12 h-12 rounded-full border border-gray-300 hover:border-gray-900 disabled:hover:border-gray-300 text-gray-900 flex-center'
     >
         {orientation == 'left' && (
           <span className='w-5 h-5 stroke-[1.5]'>
