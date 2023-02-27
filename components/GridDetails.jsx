@@ -1,7 +1,8 @@
+import Balancer from 'react-wrap-balancer'
+
 import IconPin from '@/public/icons/pin.svg'
 import IconShield from '@/public/icons/shield.svg'
 import IconClock from '@/public/icons/clock.svg'
-import Balancer from 'react-wrap-balance'
 
 export default function GridDetails({ array }) {
     return (

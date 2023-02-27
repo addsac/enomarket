@@ -5,7 +5,7 @@ import Spacing from '@/components/Spacing'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
-import { getProducts } from '@/lib/api'
+import { getMarks, getProducts } from '@/lib/api'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -40,10 +40,52 @@ export async function getStaticPaths() {
   export async function getStaticProps(context) {
     const { params } = context
     const { product } = params
+    let productParent = ''
 
     // Fetch the product from the API
     const productsList = (await getProducts()) ?? []
-    const productData = productsList.filter((productItem) => productItem.fields.nome.replace(' ', '-').toLowerCase() == product)
+    let productData = productsList.filter((productItem) => productItem.fields.nome.replace(' ', '-').toLowerCase() == product)
+
+    if(productData.length == 0) { 
+      // find the product with the categorory
+      productData = productsList.filter((productItem) => {
+        if(productItem.fields.categorie){
+          productParent = productItem.fields.nome
+
+          return productItem.fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
+        }
+      })
+
+      productData = productData[0].fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
+    }
+
+    // Catch the logos if it's not a product page choosing the category
+    if(!productData[0].fields.categorie){
+      if(!productData[0].fields.descrizione){
+        // product - category
+        
+        // console.log(product) // bottiglie-classiche
+        // console.log(productData[0].fields.nome) // Bottiglie classiche
+        // console.log(productParent) // Birre
+
+        const marks = (await getMarks(productData[0].fields.nome, productParent)) ?? []
+
+        return {
+          // Passed to the page component as props
+          props: { product: productData, productsList: productsList, marks: marks },
+        }
+      }
+      else if(productData[0].fields.descrizione){
+        // product - not category
+        // console.log(product) // birre
+        const marks = (await getMarks(productData[0].fields.nome)) ?? []
+
+        return {
+          // Passed to the page component as props
+          props: { product: productData, productsList: productsList, marks: marks },
+        }
+      }
+    }
 
     return {
       // Passed to the page component as props
@@ -51,11 +93,13 @@ export async function getStaticPaths() {
     }
   }
 
-export default function Product({ product, productsList }) {
+export default function Product({ product, productsList, marks }) {
+    console.log(marks)
+
     return (
       <>
         <Head>
-          <title> {product[0].fields.nome} | Enomarket </title>
+          {/* <title> { product[0].fields.nome } | Enomarket </title> */}
           <meta name="description" content="Enomarket, siamo un'azienda di distribuzione beverage situata a Fontaniva, Padova specializzata in vini, birre, spirits, succhi, bevande e acqua. Offriamo anche servizi di assistenza a locali e fiere con noleggio di attrezzature e tutto il necessario per mantere impianti di spillatura." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
@@ -67,14 +111,25 @@ export default function Product({ product, productsList }) {
           <Spacing height={125} />
 
           <Container>
-            {/* Pagina prodotto senza categorie */}
-            { product[0].fields.categorie == false && (
+            {/* Pagina prodotto */}
+            { !product[0].fields.categorie && (
               <>
-                <h1> { product[0].fields.nome } senza categorie </h1>
+                
+                {/* product - category */}
+                {!product[0].fields.descrizione && 
+                (
+                  <p>Categoria</p>
+                )}
+
+                {/* product - not category */}
+                {product[0].fields.descrizione && (
+                  <p>Prodotto</p>
+                )}
+
               </>
             )}
 
-            {/* Pagina prodotto con categorie */}
+            {/* Pagina scelta categoria */}
             { product[0].fields.categorie?.length > 0 && (
               <>
                 <OtherPageHeading 
