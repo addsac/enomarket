@@ -1,6 +1,7 @@
 import IconPin from '@/public/icons/pin.svg'
 import IconShield from '@/public/icons/shield.svg'
 import IconClock from '@/public/icons/clock.svg'
+import Balancer from 'react-wrap-balance'
 
 export default function GridDetails({ array }) {
     return (
@@ -15,7 +16,11 @@ export default function GridDetails({ array }) {
                         </span>
                     </div>
                     <p className='text-21 lg:text-25 font-family-lora leading-[140%]'> {item.title} </p>
-                    <p className='text-14 text-gray-700'> {item.description} </p>
+                    <p className='text-14 text-gray-700'> 
+                        <Balancer>
+                            {item.description} 
+                        </Balancer>
+                    </p>
                 </div>
             ))}
         </div>
