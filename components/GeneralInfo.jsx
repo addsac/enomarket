@@ -1,6 +1,6 @@
 import Container from '@/components/Container'
 import GridDetails from '@/components/GridDetails'
-import Balancer from 'react-wrap-balance'
+import Balancer from 'react-wrap-balancer'
 
 export default function GeneralInfo({ subtitle, title, array }) {
   return (

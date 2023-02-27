@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import OtherPageHeading from '@/components/OtherPageHeading'
 import Spacing from '@/components/Spacing'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
+import MarksList from '@/components/MarksList'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import { getMarks, getProducts } from '@/lib/api'
@@ -123,7 +124,35 @@ export default function Product({ product, productsList, marks }) {
 
                 {/* product - not category */}
                 {product[0].fields.descrizione && (
-                  <p>Prodotto</p>
+                  <>
+                    <OtherPageHeading 
+                      title={product[0].fields.nome}
+                      description={product[0].fields.descrizione.content[0].content[0].value}
+                      category="Prodotti"
+                      links={[
+                        { href: '/', label: 'Home' },
+                        { 
+                          href: '/servizi/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
+                          label: product[0].fields.nome 
+                        },
+                      ]}
+                    />
+
+                    {/* main image */}
+                    <div className="w-full h-[400px] lg:h-[800px]">
+                      <Image
+                        src={'https:'+product[0].fields.fotoProdotto.fields.file.url}
+                        width="800" 
+                        height="800" 
+                        alt={product[0].fields.foto.fields.file.name}
+                        className="w-full h-full object-cover opacity-90" 
+                      />
+                    </div>
+
+                    <MarksList
+                      marks={marks}
+                    />
+                  </>
                 )}
 
               </>
@@ -148,7 +177,7 @@ export default function Product({ product, productsList, marks }) {
                 {/* main image */}
                 <div className="w-full h-[400px] lg:h-[800px]">
                   <Image
-                    src={'https:'+product[0].fields.foto.fields.file.url}
+                    src={'https:'+product[0].fields.fotoProdotto.fields.file.url}
                     width="800" 
                     height="800" 
                     alt={product[0].fields.foto.fields.file.name}
@@ -199,7 +228,6 @@ export default function Product({ product, productsList, marks }) {
           </Container>
         </main>
 
-        <Spacing height={125} />
         <Spacing height={125} />
 
         <Contact />
