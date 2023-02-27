@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function OtherPageHeading({ title = '', description = '', category = '', links = [] }) {
   return (
     <div className="flex flex-col gap-y-10">
-        <p className='text-12 lg:text-14 uppercase font-medium font-family-montserrat tracking-wider'> 
+        <p className='text-decoration-wide font-family-montserrat'> 
             { category }
         </p>
         <div className="w-full h-px bg-gray-300"></div>
@@ -19,7 +19,7 @@ export default function OtherPageHeading({ title = '', description = '', categor
                             ? <Link href={link.href} className="text-gray-700 button-text"> {link.label} </Link> 
                             : <p className="text-gray-500"> {link.label} </p> }
 
-                        { index != links.length - 1 && <div className="text-gray-500"> / </div> }
+                        { index != links.length - 1 && <p className="text-gray-500"> / </p> }
                     </>
                 ))}
             </div>
