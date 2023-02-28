@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import IconArrowRight from '../public/icons/chev-right.svg'
 
-export default function MarksList({ marks }) {
+export default function MarksList({ marks = [] }) {
   return (
     <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12">
+        {/* <div className="col-span-12">
             <p className="text-21 lg:text-25 font-family-lora">I nostri marchi disponibili </p>
-        </div>
+        </div> */}
         {[...marks, ...marks, ...marks].map((item) => (
             <div className="relative col-span-6 md:col-span-4 p-8 lg:p-16 2xl:p-32 min-h-[200px] aspect-square bg-white border border-gray-300 group flex-center">
                 <Image

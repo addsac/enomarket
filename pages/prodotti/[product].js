@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import OtherPageHeading from '@/components/OtherPageHeading'
 import Spacing from '@/components/Spacing'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
+import MarksHeading from '@/components/MarksHeading'
 import MarksList from '@/components/MarksList'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
@@ -73,7 +74,7 @@ export async function getStaticPaths() {
 
         return {
           // Passed to the page component as props
-          props: { product: productData, productsList: productsList, marks: marks },
+          props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
         }
       }
       else if(productData[0].fields.descrizione){
@@ -83,7 +84,7 @@ export async function getStaticPaths() {
 
         return {
           // Passed to the page component as props
-          props: { product: productData, productsList: productsList, marks: marks },
+          props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
         }
       }
     }
@@ -94,7 +95,7 @@ export async function getStaticPaths() {
     }
   }
 
-export default function Product({ product, productsList, marks }) {
+export default function Product({ product, productsList, marks = [], productParent = '' }) {
     console.log(marks)
 
     return (
@@ -119,7 +120,42 @@ export default function Product({ product, productsList, marks }) {
                 {/* product - category */}
                 {!product[0].fields.descrizione && 
                 (
-                  <p>Categoria</p>
+                  <>
+
+                    <OtherPageHeading 
+                      title={product[0].fields.nome}
+                      category="Prodotti"
+                      links={[
+                        { href: '/', label: 'Home' },
+                        { 
+                          href: '/prodotti/' + productParent.replace(' ', '-').toLowerCase(), 
+                          label: productParent 
+                        },
+                        { 
+                          href: '/prodotti/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
+                          label: product[0].fields.nome 
+                        },
+                      ]}
+                    />
+
+                    {/* main image */}
+                    <div className="w-full h-[400px] lg:h-[800px]">
+                      <Image
+                        src={'https:'+product[0].fields.foto.fields.file.url}
+                        width="800" 
+                        height="800" 
+                        alt={product[0].fields.foto.fields.file.name}
+                        className="w-full h-full object-cover opacity-90" 
+                      />
+                    </div>
+
+                    <MarksHeading />
+
+                    <MarksList
+                      marks={marks}
+                    />
+
+                  </>
                 )}
 
                 {/* product - not category */}
@@ -132,7 +168,7 @@ export default function Product({ product, productsList, marks }) {
                       links={[
                         { href: '/', label: 'Home' },
                         { 
-                          href: '/servizi/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
+                          href: '/prodotti/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
                           label: product[0].fields.nome 
                         },
                       ]}
@@ -148,6 +184,8 @@ export default function Product({ product, productsList, marks }) {
                         className="w-full h-full object-cover opacity-90" 
                       />
                     </div>
+
+                    <MarksHeading />
 
                     <MarksList
                       marks={marks}
@@ -168,7 +206,7 @@ export default function Product({ product, productsList, marks }) {
                   links={[
                     { href: '/', label: 'Home' },
                     { 
-                      href: '/servizi/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
+                      href: '/prodotti/' + product[0].fields.nome.replace(' ', '-').toLowerCase(), 
                       label: product[0].fields.nome 
                     },
                   ]}
