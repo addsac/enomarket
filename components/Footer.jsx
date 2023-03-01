@@ -79,7 +79,7 @@ export default function Footer({ products }) {
                             <Link
                                 href="https://pegasodigitalstudio.com"
                                 target={'_blank'}
-                                rel='nofollow'
+                                rel="noreferrer"
                                 className='font-family-montserrat uppercase text-14 text-gray-300 hover:text-white hover:underline'
                             >
                                 Sito by Pegaso
