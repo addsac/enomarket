@@ -145,7 +145,7 @@ export default function Contact() {
           <div className="flex flex-col gap-y-12 lg:gap-y-16 text-14 lg:text-16">
             <div className="flex flex-col gap-y-4">
               <p className="text-decoration-wide font-family-montserrat"> Luogo </p>
-              <a href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel='nofollow' className="text-link-contact"> via Chiesa 108 – 35014 <br /> Fontaniva (PD), Italia </a>
+              <a href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel="noreferrer" className="text-link-contact"> via Chiesa 108 – 35014 <br /> Fontaniva (PD), Italia </a>
             </div>
             <div className="flex flex-col gap-y-4">
               <p className="text-decoration-wide font-family-montserrat"> Orari </p>

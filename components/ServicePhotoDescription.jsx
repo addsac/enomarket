@@ -17,8 +17,8 @@ export default function ServicePhotoDescription({ title = '', description = '', 
             )}
             { title == '' && (
                 <div className="col-span-4 flex flex-col gap-y-16">
-                    {texts.map((item) => (
-                        <div className='flex flex-col gap-y-6'>
+                    {texts.map((item, index) => (
+                        <div key={item.title + '-' + index} className='flex flex-col gap-y-6'>
                             <p className="text-21 lg:text-25 font-family-lora">
                                 { item.title }
                             </p>

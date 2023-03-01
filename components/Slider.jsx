@@ -1,6 +1,7 @@
 import ButtonSecondary from './ui/ButtonSecondary'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
+import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -33,7 +34,13 @@ export default function Slider({ sliderData }) {
                 {/* gradient left */}
                 <div className="absolute z-[-1] top-0 bottom-0 w-[500px] bg-gradient-to-r from-gray-900/80 to-transparent"></div>
 
-                <img src={item.fields.foto.fields.file.url} alt="" className="z-[-2] absolute w-full h-full object-cover opacity-40" />
+                <Image 
+                  src={item.fields.foto.fields.file.url} 
+                  alt="" 
+                  width="1200"
+                  height="1200"
+                  className="z-[-2] absolute w-full h-full object-cover opacity-40" 
+                  />
     
                 <div className="w-full h-full grid grid-cols-12 gap-x-[17px] md:gap-x-6 px-6 md:px-16 pb-[40px] lg:pb-[100px]">
                   <div className="col-span-12 lg:col-span-8 h-full flex flex-col justify-end gap-y-10">
