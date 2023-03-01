@@ -175,15 +175,17 @@ export default function Product({ product, productsList, marks = [], productPare
                     />
 
                     {/* main image */}
-                    <div className="w-full h-[400px] lg:h-[800px]">
-                      <Image
-                        src={'https:'+product[0].fields.fotoProdotto.fields.file.url}
-                        width="800" 
-                        height="800" 
-                        alt={product[0].fields.foto.fields.file.name}
-                        className="w-full h-full object-cover opacity-90" 
-                      />
-                    </div>
+                    {product[0]?.fields?.fotoProdotto?.fields.file.url && (
+                      <div className="w-full h-[400px] lg:h-[800px]">
+                        <Image
+                          src={'https:' + product[0].fields.fotoProdotto.fields.file.url}
+                          width="800" 
+                          height="800" 
+                          alt={product[0].fields.foto.fields.file.name}
+                          className="w-full h-full object-cover opacity-90" 
+                        />
+                      </div>
+                    )}
 
                     <MarksHeading />
 

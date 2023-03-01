@@ -35,7 +35,7 @@ export default function Slider({ sliderData }) {
                 <div className="absolute z-[-1] top-0 bottom-0 w-[500px] bg-gradient-to-r from-gray-900/80 to-transparent"></div>
 
                 <Image 
-                  src={item.fields.foto.fields.file.url} 
+                  src={'https:' + item.fields.foto.fields.file.url} 
                   alt="" 
                   width="1200"
                   height="1200"
