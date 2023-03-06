@@ -102,7 +102,7 @@ export default function Header({ products }) {
         >
             {/* logo */}
             <div className='whitespace-nowrap w-[140px] lg:w-[255px] h-14 flex items-center'>
-                <h3 className='text-21'> Enomarket.eu { headerState } </h3>
+                <h3 className='text-21'> Enomarket </h3>
             </div>
             {/* Links */}
             <div className='z-50 hidden lg:flex items-center gap-x-8'>
