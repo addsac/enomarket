@@ -3,7 +3,8 @@ import IconMenu from '@/public/icons/menu.svg'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
 import Link from 'next/link'
 import { useDetectClickOutside } from 'react-detect-click-outside'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Header({ products }) {
 
@@ -50,6 +51,41 @@ export default function Header({ products }) {
     }
   }
 
+  const [headerState, setHeaderState] = useState('1')
+  const router = useRouter()
+
+  /* change header state if route path != home in next.js */
+    useEffect(() => {
+        const check = router.asPath == '/'
+
+        if(check){
+            setHeaderState('1')
+        }
+        else{
+            setHeaderState('2')
+        }
+    }, [router])
+
+  // change header state if scroll > 0
+  useEffect(() => {
+    const handleScroll = () => {
+        const scrollCheck = window.scrollY > 0
+        if (scrollCheck) {
+            setHeaderState('2')
+        } else {
+            if(router.asPath == '/'){
+                setHeaderState('1')
+            }
+        }
+    }
+
+    document.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+        document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
 
   return (
     <>
@@ -61,10 +97,12 @@ export default function Header({ products }) {
         ></div>
         
         {/* Menu bar */}
-        <div className='bg-yellow-50 w-full text-18 flex justify-between items-center px-6 md:px-16 py-4 md:py-6 border-b border-gray-300'>
+        <div 
+            className={`${headerState == '1' ? 'bg-gradient-to-b from-gray-900/80 to transparent text-white' : 'bg-yellow-50 border-b border-gray-300 text-gray-900'} fixed top-0 w-full text-18 flex justify-between items-center px-6 md:px-16 py-4 md:py-6 z-20`}
+        >
             {/* logo */}
-            <div className='w-[140px] lg:w-[255px] h-14 flex items-center'>
-                <h3 className='text-21'> Enomarket.eu </h3>
+            <div className='whitespace-nowrap w-[140px] lg:w-[255px] h-14 flex items-center'>
+                <h3 className='text-21'> Enomarket.eu { headerState } </h3>
             </div>
             {/* Links */}
             <div className='z-50 hidden lg:flex items-center gap-x-8'>
@@ -73,7 +111,7 @@ export default function Header({ products }) {
                         onMouseEnter={() => toggleButtonProducts('enter')} 
                         className='flex items-center gap-x-2 h-[54px]'
                     >
-                        <p>Prodotti</p>
+                        Prodotti
                         <span className='w-5 h-5 stroke-[1.5]'>
                             <IconChevDown />
                         </span>
@@ -82,7 +120,7 @@ export default function Header({ products }) {
                     <div
                         ref={ref}
                         id="button-product-dialog" 
-                        className='opacity-0 -translate-y-2 w-[200px] hidden flex-col gap-y-1 p-2 bg-gray-900 absolute left-1/2 top-100 -mt-[2px] [transform:translateX(-50%)] rounded-lg transition duration-150'
+                        className='opacity-0 -translate-y-2 w-[200px] hidden flex-col gap-y-1 p-2 bg-gray-800 absolute left-1/2 top-100 -mt-[2px] [transform:translateX(-50%)] rounded-lg transition duration-150'
                         onMouseLeave={() => toggleButtonProducts('leave')} 
                     >
                         {products.map( product => (
@@ -108,10 +146,11 @@ export default function Header({ products }) {
                     </span>
                 </button>
                 <button className='hidden lg:block button-text'>Shop</button>
-                <ButtonPrimary
-                    text="Contattaci" 
-                    href="/contatti"
-                />
+                {headerState == '1' ? (
+                    <ButtonPrimary text='Contattaci' href="/contatti" size={'sm'} white={true} />
+                ) : (
+                    <ButtonPrimary text='Contattaci' href="/contatti" size={'sm'} />
+                )}
             </div>
         </div>
     </>

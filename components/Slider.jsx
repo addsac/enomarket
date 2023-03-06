@@ -7,7 +7,7 @@ import 'swiper/css/pagination'
 
 export default function Slider({ sliderData }) {
   return (
-    <div className='relative w-screen h-[calc(100vh-100px)]'>
+    <div className='relative w-screen h-[calc(100vh-24px)]'>
 
         <div className="z-10 absolute bottom-[40px] lg:bottom-[100px] right-[24px] lg:right-[100px]">
           <div className="pagination flex"></div>

@@ -13,7 +13,11 @@ export default function Footer({ products }) {
                         <p className="text-decoration-wide font-family-montserrat text-white"> Prodotti </p>
                         <div className="flex flex-col gap-y-4">
                             { products.map((product) => (
-                                <Link key={'footer-product-link-'+product.sys.id} href={'/'+product.fields.nome.replace(' ', '-').trim()} className="text-16 text-gray-400 hover:text-white"> 
+                                <Link 
+                                    key={'footer-product-link-'+product.sys.id} 
+                                    href={'/prodotti/' + product.fields.nome.replace(' ', '-').trim().toLowerCase()} 
+                                    className="text-14 lg:text-16 text-gray-400 hover:text-white"
+                                > 
                                     { product.fields.nome } 
                                 </Link>
                             ))}
@@ -22,16 +26,16 @@ export default function Footer({ products }) {
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
                         <p className="text-decoration-wide font-family-montserrat text-white"> Altre pagine </p>
                         <div className='flex flex-col gap-y-4'>
-                            <Link href='/servizi/impianti-di-spillatura' className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href='/servizi/impianti-di-spillatura' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Impianti di spillatura
                             </Link>
-                            <Link href='/servizi/noleggio-attrezzature' className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href='/servizi/noleggio-attrezzature' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Noleggio attrezature
                             </Link>
-                            <Link href='#' className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href='#' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Shop online
                             </Link>
-                            <Link href='/policy' className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href='/policy' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Privacy policy
                             </Link>
                         </div>
@@ -39,10 +43,10 @@ export default function Footer({ products }) {
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
                         <p className="text-decoration-wide font-family-montserrat text-white"> Dove trovarci </p>
                         <div className='flex flex-col gap-y-4'>
-                            <Link href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel='nofollow' className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel='nofollow' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Fontaniva (PD) <br /> via Chiesa 107, <br /> Italia - 35014 
                             </Link>
-                            <p className="text-16 text-gray-400"> 
+                            <p className="text-14 lg:text-16 text-gray-400"> 
                                 Da lunedì al venerdì:  <br /> 9.00 - 13.00 | 14.00 - 18.30
                             </p>
                         </div>
@@ -50,16 +54,16 @@ export default function Footer({ products }) {
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
                         <p className="text-decoration-wide font-family-montserrat text-white"> Contatti </p>
                         <div className='flex flex-col gap-y-4'>
-                            <Link href="tel:0495971928" className="text-16 text-gray-400"> 
+                            <Link href="tel:0495971928" className="text-14 lg:text-16 text-gray-400"> 
                                 Telefono: 0495971928
                             </Link>
-                            <Link href="tel:3202144248" className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href="tel:3202144248" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Cellulare: 3202144248
                             </Link>
-                            <Link href="mailto:info@enomarket.eu" className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href="mailto:info@enomarket.eu" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Informazioni: info@enomarket.eu
                             </Link>
-                            <Link href="mailto:ordini@enomarket.eu" className="text-16 text-gray-400 hover:text-white"> 
+                            <Link href="mailto:ordini@enomarket.eu" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Ordini: ordini@enomarket.eu
                             </Link>
                         </div>
