@@ -21,12 +21,28 @@ export default function OtherPageHeading({ title = '', description = '', categor
             </div>
             <div className="order-1 lg:order-2 flex items-center gap-x-3 text-16 mb-8">
                 { links.map((link, index) => (
-                    <>
+                    <>  
                         { index != links.length - 1 
-                            ? <Link href={link.href} className="text-gray-700 button-text"> {link.label} </Link> 
-                            : <p className="text-gray-500"> {link.label} </p> }
+                            ? <Link
+                                href={link.href} 
+                                className="text-gray-700 button-text" 
+                                > 
+                                    {link.label} 
+                                </Link> 
+                            : <p 
+                                className="text-gray-500" 
+                            >
+                                {link.label}
+                            </p> 
+                        }
 
-                        { index != links.length - 1 && <p className="text-gray-500"> / </p> }
+                        { index != links.length - 1 && (
+                            <p 
+                                className="text-gray-500" 
+                            > 
+                                /
+                            </p>
+                        ) }
                     </>
                 ))}
             </div>

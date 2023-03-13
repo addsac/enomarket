@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useDetectClickOutside } from 'react-detect-click-outside'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 export default function Header({ products }) {
 
@@ -86,15 +87,122 @@ export default function Header({ products }) {
     }
   }, [])
 
+  // animation for priduct list modal modal menu
+    const [modalMobileProductListBool, setModalMobileProductListBool] = useState(false)
+
+    const variantsModalProductMobile = {
+        hidden: {
+            opacity: 0,
+            y: -2,
+            height: 0,
+            padding: '0 12px'
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            height: 'auto',
+            padding: '12px 12px'
+        }
+    }
 
   return (
     <>
         {/* Modal mobile menu */}
         <div 
             ref={modalMenuMobile} 
-            onClick={() => toggleModalMobile()}
-            className="fixed -translate-x-full z-50 inset-0 bg-black transition duration-300 ease-in-out"
-        ></div>
+            className="fixed -translate-x-full z-50 inset-0 h-screen max-h-screen overflow-y-scroll bg-black transition duration-300 ease-in-out px-6 pt-16 pb-24"
+        >
+            <div className="relative flex flex-col gap-y-5 text-21 text-white">
+                {/* button close modal */}
+                <button onClick={() => toggleModalMobile()} className="absolute right-0 border border-white w-10 h-10 transition rounded-full text-white flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" class="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>                       
+                </button>
+
+                <Link href='/'>
+                    Home
+                </Link>
+                <div className='flex flex-col'>
+                    <button 
+                        onClick={() => setModalMobileProductListBool(!modalMobileProductListBool)} 
+                        className='flex items-center gap-x-2'
+                    >
+                        <p className='text-white'>
+                            Prodotti
+                        </p>
+                        <span className='w-5 h-5 stroke-[1.5]'>
+                            <IconChevDown />
+                        </span>
+                    </button>
+                    <motion.div 
+                        animate={modalMobileProductListBool ? 'visible' : 'hidden'}
+                        variants={variantsModalProductMobile}
+                        className='flex flex-col pl-5 text-18'
+                    >   
+                        {products.map((product) => (
+                            <div className='mt-3'>
+                                <Link 
+                                    key={'modal-mobile-product-list-' + product.sys.id}
+                                    href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} 
+                                >
+                                    {product.fields.nome}
+                                </Link>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+                <Link href='/attrezzature'>
+                    Attrezzature
+                </Link>
+                <Link href='/impianti-di-spillatura'>
+                    Impianti di spillatura
+                </Link>
+                <Link href='/' target={'_blank'}>
+                    Shop
+                </Link>
+                <div className='my-4'>
+                    <ButtonPrimary 
+                        text='Contattaci' 
+                        href="/contatti" 
+                        size={'lg'} 
+                        white={true} 
+                    />
+                </div>
+                
+                <div className='my-4 h-px w-full bg-white/20'></div>
+
+                <div className="flex flex-col gap-y-4">
+                    <p className="text-16 text-white"> Dove trovarci </p>
+                    <div className='flex flex-col gap-y-4'>
+                        <Link href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel='nofollow' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            Fontaniva (PD) <br /> via Chiesa 107, <br /> Italia - 35014 
+                        </Link>
+                        <p className="text-14 lg:text-16 text-gray-400"> 
+                            Da lunedì al venerdì:  <br /> 9.00 - 13.00 | 14.00 - 18.30
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-y-4">
+                    <p className="text-16 text-white"> Contatti </p>
+                    <div className='flex flex-col gap-y-4'>
+                        <Link href="tel:0495971928" className="text-14 lg:text-16 text-gray-400"> 
+                            Telefono: 0495971928
+                        </Link>
+                        <Link href="tel:3202144248" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            Cellulare: 3202144248
+                        </Link>
+                        <Link href="mailto:info@enomarket.eu" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            Informazioni: info@enomarket.eu
+                        </Link>
+                        <Link href="mailto:ordini@enomarket.eu" className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            Ordini: ordini@enomarket.eu
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         {/* Menu bar */}
         <div 
@@ -140,7 +248,10 @@ export default function Header({ products }) {
             {/* Buttons */}
             <div className='flex items-center gap-x-4 lg:gap-x-8'>
                 {/* Button mobile menu */}
-                <button onClick={() => toggleModalMobile()} className='lg:hidden group button-icon'>
+                <button
+                    onClick={() => toggleModalMobile()} 
+                    className={`lg:hidden group ${headerState == '1' ? 'button-icon-dark' : 'button-icon-white'}`}
+                >
                     <span className='h-5 w-5 stroke-[1.5] stroke-gray-900'>
                         <IconMenu />
                     </span>

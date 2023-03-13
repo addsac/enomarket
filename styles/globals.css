@@ -46,8 +46,11 @@ button{
 .button-secondary{
     @apply text-12 lg:text-14 font-medium uppercase bg-yellow-400 text-gray-900 px-[28px] lg:px-10 py-[14px] lg:py-5 rounded-lg lg:rounded-[10px] transition;
 }
-.button-icon{
+.button-icon-white{
     @apply w-12 h-12 rounded-lg flex-center border border-gray-900;
+}
+.button-icon-dark{
+    @apply w-12 h-12 rounded-lg flex-center border border-white/50;
 }
 
 /* text */

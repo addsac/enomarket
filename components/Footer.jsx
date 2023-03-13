@@ -7,7 +7,7 @@ export default function Footer({ products }) {
                 {/* Logo and likns */}
                 <div className='grid grid-cols-12 gap-x-6 gap-y-12'>
                     <div className="col-span-12 lg:col-span-4">
-                        <div className="w-32 h-32 bg-white rounded-full"></div>
+                        <div className="w-24 lg:w-32 h-24 lg:h-32 bg-white rounded-full"></div>
                     </div>
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
                         <p className="text-decoration-wide font-family-montserrat text-white"> Prodotti </p>
