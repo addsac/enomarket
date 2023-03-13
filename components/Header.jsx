@@ -141,9 +141,11 @@ export default function Header({ products }) {
                         className='flex flex-col pl-5 text-18'
                     >   
                         {products.map((product) => (
-                            <div className='mt-3'>
+                            <div 
+                                key={'modal-mobile-product-list-' + product.sys.id} 
+                                className='mt-3'
+                            >
                                 <Link 
-                                    key={'modal-mobile-product-list-' + product.sys.id}
                                     href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} 
                                 >
                                     {product.fields.nome}
