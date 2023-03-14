@@ -214,9 +214,9 @@ export default function Header({ products }) {
             <div className='whitespace-nowrap w-[140px] lg:w-[255px] h-14 flex items-center'>
                 {/* <h3 className='text-21'> Enomarket </h3> */}
                 {headerState == '1' ? (
-                    <img src="/logo_light.png" alt="" className='w-auto h-8 lg:h-14' />
+                    <img src="/logo_light.png" alt="" className='w-auto h-10 lg:h-14' />
                 ) : (
-                    <img src="/logo.png" alt="" className='w-auto h-8 lg:h-14' />
+                    <img src="/logo.png" alt="" className='w-auto h-10 lg:h-14' />
                 )}
             </div>
             {/* Links */}
