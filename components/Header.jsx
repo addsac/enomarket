@@ -160,7 +160,7 @@ export default function Header({ products }) {
                 <Link href='/impianti-di-spillatura'>
                     Impianti di spillatura
                 </Link>
-                <Link href='/' target={'_blank'}>
+                <Link href='https://enomarket.roadwarrior.it' target={'_blank'}>
                     Shop
                 </Link>
                 <div className='my-4'>
