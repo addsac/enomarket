@@ -117,7 +117,7 @@ export default function Header({ products }) {
                 <button onClick={() => toggleModalMobile()} className="absolute right-0 border border-white w-10 h-10 transition rounded-full text-white flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" class="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>                       
+                    </svg>
                 </button>
 
                 <Link href='/'>
@@ -212,7 +212,12 @@ export default function Header({ products }) {
         >
             {/* logo */}
             <div className='whitespace-nowrap w-[140px] lg:w-[255px] h-14 flex items-center'>
-                <h3 className='text-21'> Enomarket </h3>
+                {/* <h3 className='text-21'> Enomarket </h3> */}
+                {headerState == '1' ? (
+                    <img src="/logo_light.png" alt="" className='w-auto h-8 lg:h-14' />
+                ) : (
+                    <img src="/logo.png" alt="" className='w-auto h-8 lg:h-14' />
+                )}
             </div>
             {/* Links */}
             <div className='z-50 hidden lg:flex items-center gap-x-8'>
