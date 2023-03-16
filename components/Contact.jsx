@@ -71,12 +71,16 @@ export default function Contact() {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data.data)
+        console.log('ok')
 
         setTimeout(() => {
           setModalSuccessBool(true)
           setLoading('false')
         }, 3000)
+      })
+      .catch(err => {
+        console.log(err)
+        setLoading('false')
       })
     }
   }
