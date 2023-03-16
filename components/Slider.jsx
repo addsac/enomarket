@@ -50,6 +50,7 @@ export default function Slider({ sliderData }) {
                       <ButtonSecondary
                         text={ item.fields.bottone }
                         href={ item.fields.link }
+                        size='lg'
                       />
                     </div>
                   </div>

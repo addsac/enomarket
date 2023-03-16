@@ -1,6 +1,7 @@
 import IconChevDown from '@/public/icons/chev-down.svg'
 import IconMenu from '@/public/icons/menu.svg'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
+import ButtonSecondary from '@/components/ui/ButtonSecondary'
 import Link from 'next/link'
 import { useDetectClickOutside } from 'react-detect-click-outside'
 import { useEffect, useRef, useState } from 'react'
@@ -269,7 +270,7 @@ export default function Header({ products }) {
                 </button>
                 <button className='hidden lg:block button-text'>Shop</button>
                 {headerState == '1' ? (
-                    <ButtonPrimary text='Contattaci' href="/contatti" size={'sm'} white={true} />
+                    <ButtonSecondary text='Contattaci' href="/contatti" size={'sm'} />
                 ) : (
                     <ButtonPrimary text='Contattaci' href="/contatti" size={'sm'} />
                 )}
