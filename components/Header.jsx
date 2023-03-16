@@ -115,7 +115,7 @@ export default function Header({ products }) {
             <div className="relative flex flex-col gap-y-5 text-21 text-white">
                 {/* button close modal */}
                 <button onClick={() => toggleModalMobile()} className="absolute right-0 border border-white w-10 h-10 transition rounded-full text-white flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" class="w-4 h-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -214,9 +214,13 @@ export default function Header({ products }) {
             <div className='whitespace-nowrap w-[140px] lg:w-[255px] h-14 flex items-center'>
                 {/* <h3 className='text-21'> Enomarket </h3> */}
                 {headerState == '1' ? (
-                    <img src="/logo_light.png" alt="" className='w-auto h-10 lg:h-14' />
+                    <Link href="/">
+                        <img src="/logo_light.png" alt="" className='w-auto h-10 lg:h-14' />
+                    </Link>
                 ) : (
-                    <img src="/logo.png" alt="" className='w-auto h-10 lg:h-14' />
+                    <Link href="/">
+                        <img src="/logo.png" alt="" className='w-auto h-10 lg:h-14' />
+                    </Link>
                 )}
             </div>
             {/* Links */}

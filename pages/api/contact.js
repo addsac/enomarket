@@ -6,11 +6,16 @@ mail.setApiKey(process.env.SENDGRID_API_KEY)
 export default async function handler(req, res) {
     const { fullname, company_name, email, message} = req.body
 
+    const fullText = `
+      nome: ${fullname} <br />,
+      email: ${email} <br />,
+      messaggio: ${message} <br />
+    `
     const data = {
-      to: 'info@enomarket.eu',
-      from: 'pegasodigitalstudio@gmail.com',
-      subject: `New message from ${fullname} (company: ${company_name}) - ${email}`,
-      text: message,
+      to: 'leocitton@gmail.com',
+      from: 'info@enomarket.eu',
+      subject: `New message from ${fullname} (company: ${company_name})`,
+      text: fullText,
       html: fullText.replace(/\r\n/g, '<br />'),
     }
 
