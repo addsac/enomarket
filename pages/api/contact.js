@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     messaggio: ${message} <br />
   `
   const data = {
-    to: 'leocitton@gmail.com',
+    to: 'info@enomarket.eu',
     from: 'info@enomarket.eu',
     subject: `New message from ${fullname} (company: ${company_name})`,
     text: fullText,
