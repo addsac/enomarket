@@ -7,8 +7,8 @@ export default async function handler(req, res) {
   const { fullname, company_name, email, message} = req.body
 
   const fullText = `
-    nome: ${fullname} <br />,
-    email: ${email} <br />,
+    nome: ${fullname}, <br />
+    email: ${email}, <br />
     messaggio: ${message} <br />
   `
   const data = {
