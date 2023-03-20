@@ -10,7 +10,7 @@ export default function MarksList({ marks = [] }) {
         {marks.map((item, index) => (
             <div 
                 key={item.fields.nome + '-' + index}
-                className="relative col-span-6 md:col-span-4 p-8 lg:p-16 2xl:p-32 min-h-[200px] aspect-square bg-white border border-gray-300 group flex-center"
+                className="relative col-span-6 md:col-span-4 p-8 lg:p-16 2xl:p-32 aspect-square bg-white border border-gray-300 group flex-center"
             >
                 <Image
                     src={'https:'+item.fields.foto.fields.file.url}
