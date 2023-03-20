@@ -7,7 +7,7 @@ export default function MarksList({ marks = [] }) {
         {/* <div className="col-span-12">
             <p className="text-21 lg:text-25 font-family-lora">I nostri marchi disponibili </p>
         </div> */}
-        {[...marks, ...marks, ...marks].map((item, index) => (
+        {marks.map((item, index) => (
             <div 
                 key={item.fields.nome + '-' + index}
                 className="relative col-span-6 md:col-span-4 p-8 lg:p-16 2xl:p-32 min-h-[200px] aspect-square bg-white border border-gray-300 group flex-center"
