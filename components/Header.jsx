@@ -121,7 +121,10 @@ export default function Header({ products }) {
                     </svg>
                 </button>
 
-                <Link href='/'>
+                <Link 
+                    href='/'
+                    onClick={() => toggleModalMobile()}
+                >
                     Home
                 </Link>
                 <div className='flex flex-col'>
@@ -148,6 +151,7 @@ export default function Header({ products }) {
                             >
                                 <Link 
                                     href={'/prodotti/'+product.fields.nome.replace(' ', '-').toLowerCase()} 
+                                    onClick={() => toggleModalMobile()}
                                 >
                                     {product.fields.nome}
                                 </Link>
@@ -155,13 +159,22 @@ export default function Header({ products }) {
                         ))}
                     </motion.div>
                 </div>
-                <Link href='/attrezzature'>
+                <Link 
+                    href='/attrezzature'
+                    onClick={() => toggleModalMobile()}
+                >
                     Attrezzature
                 </Link>
-                <Link href='/impianti-di-spillatura'>
+                <Link 
+                    href='/impianti-di-spillatura'
+                    onClick={() => toggleModalMobile()}
+                >
                     Impianti di spillatura
                 </Link>
-                <Link href='https://enomarket.roadwarrior.it' target={'_blank'}>
+                <Link 
+                    href='https://enomarket.roadwarrior.it' target={'_blank'}
+                    onClick={() => toggleModalMobile()}
+                >
                     Shop
                 </Link>
                 <div className='my-4'>
