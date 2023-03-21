@@ -46,19 +46,37 @@ export async function getStaticPaths() {
 
     // Fetch the product from the API
     const productsList = (await getProducts()) ?? []
+
     let productData = productsList.filter((productItem) => productItem.fields.nome.replace(' ', '-').toLowerCase() == product)
 
     if(productData.length == 0) { 
-      // find the product with the categorory
+      // find the product with the category
       productData = productsList.filter((productItem) => {
         if(productItem.fields.categorie){
-          productParent = productItem.fields.nome
+          // find the right product parent
+          if(productItem.fields.categorie.map((category) => {
+            if(category.fields.nome.replace(' ', '-').toLowerCase() == product) {
+              productParent = productItem.fields.nome
+            }
+          }))
 
           return productItem.fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
         }
       })
 
-      productData = productData[0].fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
+      // find the right index
+      let indexRight = 0
+      productData.map((productItem, index) => {
+        if(productItem.fields.nome.replace(' ', '-').toLowerCase() == productParent.replace(' ', '-').toLowerCase()){
+          return indexRight = index
+        }
+      })
+
+      // console.log(indexRight)
+      
+      productData = productData[indexRight].fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
+      
+      // console.log(productData)
     }
 
     // Catch the logos if it's not a product page choosing the category
@@ -96,8 +114,6 @@ export async function getStaticPaths() {
   }
 
 export default function Product({ product, productsList, marks = [], productParent = '' }) {
-    console.log(marks)
-
     return (
       <>
         <Head>
