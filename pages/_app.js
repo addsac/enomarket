@@ -31,8 +31,8 @@ export default function App({ Component, pageProps }) {
           key={router}
           initial={{ opacity: 0, y: 17 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 17 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          exit={{ opacity: 0, y: -17 }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
         >
           <Component {...pageProps} />
         </motion.div>
