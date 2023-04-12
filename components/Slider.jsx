@@ -45,7 +45,7 @@ export default function Slider({ sliderData }) {
                 <div className="w-full h-full grid grid-cols-12 gap-x-[17px] md:gap-x-6 px-6 md:px-16 pb-[40px] lg:pb-[100px]">
                   <div className="col-span-12 lg:col-span-8 h-full flex flex-col justify-end gap-y-10">
                     <p className='uppercase text-16 lg:text-18 font-familiy-monserrat font-medium text-yellow-400'> { item.fields.categoria } </p>
-                    <p className='text-44 lg:text-58 xl:text-78 font-family-lora text-white leading-[130%]'> { item.fields.titolo } </p>
+                    <p className='text-44 lg:text-58 font-family-lora text-white leading-[130%]'> { item.fields.titolo } </p>
                     <div>
                       <ButtonSecondary
                         text={ item.fields.bottone }
