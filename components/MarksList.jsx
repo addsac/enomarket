@@ -21,14 +21,14 @@ export default function MarksList({ marks = [] }) {
                 />
 
                 {/* hoverlay on hover */}
-                <a href={item.fields.sito} target={'_blank'} rel="noreferrer" className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition duration-200 cursor-pointer">
+                {/* <a href={item.fields.sito} target={'_blank'} rel="noreferrer" className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition duration-200 cursor-pointer">
                     <div className="absolute inset-0 flex-center p-4 text-center">
                         <p className="text-white text-16 lg:text-21 font-family-lora opacity-0 group-hover:opacity-100 transition duration-200">
                             Apri il sito del produttore 
                             <IconArrowRight className="inline-block w-4 h-4 ml-2 stroke-2" />
                         </p>
                     </div>
-                </a>
+                </a> */}
             </div>
         ))}
     </div>

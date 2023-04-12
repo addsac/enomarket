@@ -77,8 +77,8 @@ export default function Footer({ products }) {
 
                 {/* Company data and social links */}
                 <div className='grid grid-cols-12 gap-x-6 gap-y-16 items-center'>
-                        <p className='col-span-12 lg:col-span-4 text-12 text-gray-500'>
-                            © 2020 ENOMARKET S.R.L. - via Borgo Padova 101/A Cap 31033 Castelfranco Veneto (TV) | P.Iva e C.F. 03590860262 - REA TV - 283023 - PEC: ferrodistribuzione@legalmail.it - Cap. Soc. Euro 102.960,00
+                        <p className='col-span-12 lg:col-span-4 text-12 text-gray-400'>
+                            © 2020 ENOMARKET S.R.L. - via Chiesa 108, Italia - 35014 Fontaniva (PD) | P.Iva e C.F. 00606470284 - REA 1282789
                         </p>
 
                         <div className='col-span-12 lg:col-span-8 flex lg:justify-end gap-x-6'>
