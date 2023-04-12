@@ -88,6 +88,9 @@ export async function getStaticProps() {
   const productsData = (await getProducts()) ?? []
 
   return {
-    props: { sliderData, productsData },
+    props: { 
+      sliderData, productsData
+    },
+    revalidate: 30, 
   }
 }

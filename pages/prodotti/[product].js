@@ -14,104 +14,105 @@ import Link from 'next/link'
 
 // Generates `/prodotti/1` and `/prodotti/2`
 export async function getStaticPaths() {
-    // Call an external API endpoint to get the products
-    const productsData = (await getProducts()) ?? []
+  // Call an external API endpoint to get the products
+  const productsData = (await getProducts()) ?? []
 
-    if(productsData.length > 0) {
-        // Get the paths we want to pre-render based on products
-        const paths = productsData.map((product) => ({
-          params: { product: product.fields.nome.replace(' ', '-').toLowerCase() },
+  if(productsData.length > 0) {
+      // Get the paths we want to pre-render based on products
+      const paths = productsData.map((product) => ({
+        params: { product: product.fields.nome.replace(' ', '-').toLowerCase() },
+      }))
+
+      // adding the route for the categories
+      productsData.map((product) => {
+        if(product.fields.categorie){
+          product.fields.categorie.map((category) => {
+            paths.push({ params: { product: category.fields.nome.replace(' ', '-').toLowerCase() } })
+          })
+        }
+      })
+
+      return { paths: paths, fallback: false }
+  }
+
+  return { paths: [], fallback: false }
+}
+
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps(context) {
+  const { params } = context
+  const { product } = params
+  let productParent = ''
+
+  // Fetch the product from the API
+  const productsList = (await getProducts()) ?? []
+
+  let productData = productsList.filter((productItem) => productItem.fields.nome.replace(' ', '-').toLowerCase() == product)
+
+  if(productData.length == 0) { 
+    // find the product with the category
+    productData = productsList.filter((productItem) => {
+      if(productItem.fields.categorie){
+        // find the right product parent
+        if(productItem.fields.categorie.map((category) => {
+          if(category.fields.nome.replace(' ', '-').toLowerCase() == product) {
+            productParent = productItem.fields.nome
+          }
         }))
 
-        // adding the route for the categories
-        productsData.map((product) => {
-          if(product.fields.categorie){
-            product.fields.categorie.map((category) => {
-              paths.push({ params: { product: category.fields.nome.replace(' ', '-').toLowerCase() } })
-            })
-          }
-        })
-
-        return { paths: paths, fallback: false }
-    }
-
-    return { paths: [], fallback: false }
-  }
-  
-  // `getStaticPaths` requires using `getStaticProps`
-  export async function getStaticProps(context) {
-    const { params } = context
-    const { product } = params
-    let productParent = ''
-
-    // Fetch the product from the API
-    const productsList = (await getProducts()) ?? []
-
-    let productData = productsList.filter((productItem) => productItem.fields.nome.replace(' ', '-').toLowerCase() == product)
-
-    if(productData.length == 0) { 
-      // find the product with the category
-      productData = productsList.filter((productItem) => {
-        if(productItem.fields.categorie){
-          // find the right product parent
-          if(productItem.fields.categorie.map((category) => {
-            if(category.fields.nome.replace(' ', '-').toLowerCase() == product) {
-              productParent = productItem.fields.nome
-            }
-          }))
-
-          return productItem.fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
-        }
-      })
-
-      // find the right index
-      let indexRight = 0
-      productData.map((productItem, index) => {
-        if(productItem.fields.nome.replace(' ', '-').toLowerCase() == productParent.replace(' ', '-').toLowerCase()){
-          return indexRight = index
-        }
-      })
-
-      // console.log(indexRight)
-      
-      productData = productData[indexRight].fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
-      
-      // console.log(productData)
-    }
-
-    // Catch the logos if it's not a product page choosing the category
-    if(!productData[0].fields.categorie){
-      if(!productData[0].fields.descrizione){
-        // product - category
-        
-        // console.log(product) // bottiglie-classiche
-        // console.log(productData[0].fields.nome) // Bottiglie classiche
-        // console.log(productParent) // Birre
-
-        const marks = (await getMarks(productData[0].fields.nome, productParent)) ?? []
-
-        return {
-          // Passed to the page component as props
-          props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
-        }
+        return productItem.fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
       }
-      else if(productData[0].fields.descrizione){
-        // product - not category
-        // console.log(product) // birre
-        const marks = (await getMarks(productData[0].fields.nome)) ?? []
+    })
 
-        return {
-          // Passed to the page component as props
-          props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
-        }
+    // find the right index
+    let indexRight = 0
+    productData.map((productItem, index) => {
+      if(productItem.fields.nome.replace(' ', '-').toLowerCase() == productParent.replace(' ', '-').toLowerCase()){
+        return indexRight = index
+      }
+    })
+
+    // console.log(indexRight)
+    
+    productData = productData[indexRight].fields.categorie.filter((category) => category.fields.nome.replace(' ', '-').toLowerCase() == product)
+    
+    // console.log(productData)
+  }
+
+  // Catch the logos if it's not a product page choosing the category
+  if(!productData[0].fields.categorie){
+    if(!productData[0].fields.descrizione){
+      // product - category
+      
+      // console.log(product) // bottiglie-classiche
+      // console.log(productData[0].fields.nome) // Bottiglie classiche
+      // console.log(productParent) // Birre
+
+      const marks = (await getMarks(productData[0].fields.nome, productParent)) ?? []
+
+      return {
+        // Passed to the page component as props
+        props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
       }
     }
+    else if(productData[0].fields.descrizione){
+      // product - not category
+      // console.log(product) // birre
+      const marks = (await getMarks(productData[0].fields.nome)) ?? []
 
-    return {
-      // Passed to the page component as props
-      props: { product: productData, productsList: productsList },
+      return {
+        // Passed to the page component as props
+        props: { product: productData, productsList: productsList, marks: marks, productParent: productParent },
+      }
     }
   }
+
+  return {
+    // Passed to the page component as props
+    props: { product: productData, productsList: productsList },
+    revalidate: 30, 
+  }
+}
 
 export default function Product({ product, productsList, marks = [], productParent = '' }) {
     return (
