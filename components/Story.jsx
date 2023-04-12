@@ -24,38 +24,38 @@ export default function Story() {
                 </div>
                 <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                     <div className="w-full h-px bg-gray-300"></div>
-                    <p className="text-25 font-family-lora">
-                        Da più di 40 anni, noi di Enomarket ci occupiamo di distriubuire alle aziende del Nord Italia vini, birre, distillati e beverage provenienti tutto il mondo.
+                    <p className="text-25 font-family-lora md:pr-8">
+                        Da più di 50 anni, noi di Enomarket ci occupiamo di distriubuire alle aziende del Nord Italia i migiori marchi di vini, birre, distillati e beverage provenienti tutto il mondo.
                         Siamo inoltre specializzati in servizi come il noleggio di attrezzature e installazioni di impianti di spillatura.
                     </p>
                 </div>
                 <div className='col-span-12 lg:col-span-6 grid grid-cols-12 gap-x-6 gap-y-10'>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
-                        <p className="text-25 font-family-lora"> 150+ Staff </p>
+                        <p className="text-25 font-family-lora leading-[140%]"> 54+ Anni di Attività </p>
                         <p className="text-14 text-gray-700">
-                            With an eclectic and brilliant mix of individuals, AvroKO’s family is a wonderful and diverse melting pot of visionary interior designers, architects, lighting specialists, artists, furniture crafters, and business leaders.
+                            Siamo attiviti dal 1969, fin dal primo momento ci siamo voluti specializzare in prodotti di qualità per offrire il meglio ai nostri clienti. Da più di 50 anni fino a oggi, per il settore del beverage.
                         </p>
                     </div>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
-                        <p className="text-25 font-family-lora"> 5 Uffici </p>
+                        <p className="text-25 font-family-lora leading-[140%]"> 800+ Prodotti in catalogo </p>
                         <p className="text-14 text-gray-700">
-                            With an eclectic and brilliant mix of individuals, AvroKO’s family is a wonderful and diverse melting pot of visionary interior designers, architects, lighting specialists, artists, furniture crafters, and business leaders.
+                            Abbiamo disponibili in catalogo più di 800 prodotti, tra cui vini, birre, distillati e beverage provenienti dai più grandi marchi tutto il mondo, per soddisfare le esigenze dei clienti più esigenti. 
                         </p>
                     </div>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
-                        <p className="text-25 font-family-lora"> Tutto il Nord Italia </p>
+                        <p className="text-25 font-family-lora leading-[140%]"> Servizi di spillatura e noleggio </p>
                         <p className="text-14 text-gray-700">
-                            With an eclectic and brilliant mix of individuals, AvroKO’s family is a wonderful and diverse melting pot of visionary interior designers, architects, lighting specialists, artists, furniture crafters, and business leaders.
+                            Oltre al catalogo prodotti, offriamo servizi in sede e fuori sede di noleggio attrezzature da bar per le tue feste e la vendita e manuetzione di impianti di spillatura professionale.
                         </p>
                     </div>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
-                        <p className="text-25 font-family-lora"> 40+ Anni di esperienza </p>
+                        <p className="text-25 font-family-lora leading-[140%]"> Corso di formazione gratuiti </p>
                         <p className="text-14 text-gray-700">
-                            With an eclectic and brilliant mix of individuals, AvroKO’s family is a wonderful and diverse melting pot of visionary interior designers, architects, lighting specialists, artists, furniture crafters, and business leaders.
+                            Per i nostri clienti, offriamo corsi gratuiti di formazione per la preparazione di spirits, per la miscelatura, e per servizi di splillatura professionale. 
                         </p>
                     </div>
                 </div>

@@ -76,8 +76,8 @@ export default function Footer({ products }) {
                 <div className="h-px w-full bg-gray-500"></div>
 
                 {/* Company data and social links */}
-                <div className='grid grid-cols-12 gap-x-6 gap-y-16 items-center'>
-                        <p className='col-span-12 lg:col-span-4 text-12 text-gray-400'>
+                <div className='grid grid-cols-12 gap-x-6 gap-y-16 items-start'>
+                        <p className='col-span-12 lg:col-span-4 text-14 text-gray-400'>
                             © 2020 ENOMARKET S.R.L. - via Chiesa 108, Italia - 35014 Fontaniva (PD) | P.Iva e C.F. 00606470284 - REA 1282789
                         </p>
 
