@@ -2,16 +2,25 @@ import Container from '@/components/Container'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
 import Image from 'next/image'
 import Link from 'next/link'
+import Balancer from 'react-wrap-balancer'
 
 export default function Products({ subtitle, title, description, array }) {
   return (
     <Container>
         {/* text */}
         <div className='flex flex-col gap-y-10'>
-            <p className='text-12 lg:text-14 uppercase font-medium font-family-montserrat tracking-wider'> { subtitle } </p>
+            <p className='text-12 lg:text-14 uppercase font-medium font-family-montserrat tracking-wider'> 
+                <Balancer>
+                    { subtitle } 
+                </Balancer>
+            </p>
             <div className="w-full h-px bg-gray-300"></div>
             <div className="w-full grid grid-cols-12 gap-x-6 gap-y-10">
-                <p className="col-span-12 lg:col-span-6 text-28 lg:text-44 font-family-lora leading-[150%]"> { title } </p>
+                <p className="col-span-12 lg:col-span-6 text-28 lg:text-44 font-family-lora leading-[150%]"> 
+                    <Balancer>
+                        { title }
+                    </Balancer>
+                </p>
                 <p className="col-span-12 lg:col-span-6 text-16 text-gray-700"> { description } </p>
             </div>
         </div>

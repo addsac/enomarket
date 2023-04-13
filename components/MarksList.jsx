@@ -17,7 +17,7 @@ export default function MarksList({ marks = [] }) {
                     width="250"
                     height="250"
                     alt={item.fields.nome + ' marchio disponibile su Enomarket '}
-                    className="h-auto w-full max-w-[100px] lg:max-w-[250px] max-h-[100px] lg:max-h-[250px]" 
+                    className="h-auto w-2/3 lg:w-1/2 max-w-[100px] lg:max-w-[250px] max-h-[100px] lg:max-h-[250px]" 
                 />
 
                 {/* hoverlay on hover */}

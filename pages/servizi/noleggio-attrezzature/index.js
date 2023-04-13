@@ -54,18 +54,18 @@ export default function NoleggioAttrezzature({ productsData }) {
             array={[
               {
                 icon: 'pin',
-                title: 'Consegne a Padova, Vicenza, treviso',
-                description: 'Consegne in 1/3 giorni gestite con i mezzi e personale interno dell’ azienda per garantire un servizio puntuale, sicuro ed efficiente'
+                title: 'Consegne a Padova, Vicenza, Treviso',
+                description: 'Il servizio và oltre la consegna della bottiglia: visite in cantina, incontri con il produttore, possibilità di toccare il prodotto con mano; consulenza sul vino, produzione di carte vino, formazione del personale'
               },
               {
                 icon: 'shield',
                 title: 'Alta qualità dei prodotti garantita',
-                description: 'Consegne in 1/3 giorni gestite con i mezzi e personale interno dell’ azienda per garantire un servizio puntuale, sicuro ed efficiente'
+                description: 'Mettiamo a disposizione dei nostri clienti il meglio che il mercato offre. Oltre alle cantine più blasonate e alle birre e agli spirit più sofisticati, proponiamo la nostra selezione che interpreta la cultura del bere bene. Piccoli birrifici artigianali, micro cantine, distillatori che lavorano con metodi ancestrali.'
               },
               {
                 icon: 'clock',
                 title: 'Professionalità e precisione nelle consegne',
-                description: 'Consegne in 1/3 giorni gestite con i mezzi e personale interno dell’ azienda per garantire un servizio puntuale, sicuro ed efficiente'
+                description: 'Consegniamo i nostri prodotti in 1/3 giorni gestite con i nostri mezzi aziendali interni all’ azienda per garantire affidabilità ed un servizio sempre puntuale per il cliente.'
               },
             ]}
           />

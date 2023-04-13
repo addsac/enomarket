@@ -16,7 +16,11 @@ export default function GridDetails({ array }) {
                             { item.icon == 'clock' && <IconClock /> }
                         </span>
                     </div>
-                    <p className='text-21 lg:text-25 font-family-lora leading-[140%]'> {item.title} </p>
+                    <p className='text-21 lg:text-25 font-family-lora leading-[140%]'> 
+                        <Balancer>
+                            {item.title} 
+                        </Balancer>
+                    </p>
                     <p className='text-14 text-gray-700'> 
                         <Balancer>
                             {item.description} 
