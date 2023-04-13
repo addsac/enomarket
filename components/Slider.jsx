@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from 'swiper'
 import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Balancer } from 'react-wrap-balancer'
+import Balancer from 'react-wrap-balancer'
 
 export default function Slider({ sliderData }) {
   return (

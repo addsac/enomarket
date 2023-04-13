@@ -20,8 +20,8 @@ export default async function handler(req, res) {
   }
 
   await mail.send(data)
-  .then(() => {
-    console.log('Email sent')
+  .then((res) => {
+    console.log('Email sent:', res)
   })
   .catch((error) => {
     console.error(error)
