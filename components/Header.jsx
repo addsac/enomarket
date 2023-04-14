@@ -160,13 +160,13 @@ export default function Header({ products }) {
                     </motion.div>
                 </div>
                 <Link 
-                    href='/attrezzature'
+                    href='/servizi/noleggio-attrezzature'
                     onClick={() => toggleModalMobile()}
                 >
                     Attrezzature
                 </Link>
                 <Link 
-                    href='/impianti-di-spillatura'
+                    href='/servizi/impianti-di-spillatura'
                     onClick={() => toggleModalMobile()}
                 >
                     Impianti di spillatura

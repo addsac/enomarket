@@ -31,7 +31,7 @@ export default function NoleggioAttrezzature({ productsData }) {
           {/* first text info */}
           <OtherPageHeading 
             title="Noleggio Attrezzature"
-            description="Per i tuoi eventi offriamo un servizio di noleggio attrezzature commerciali come panche e sedie, gazebi, ombrelloni, tavoli, banchi refrigerati, tank, fusti di birra a caduta, soprabanchi, celle frigo, frigovetrine, bicchieri e boccali e gadgettistica."
+            description="Per i tuoi eventi offriamo un servizio in comodato o a noleggio di attrezzature come set birreria, gazebi, ombrelloni, banchi refrigerati, tank, fusti di birra a caduta,spillatore soprabanchi, chioschi, frigovetrine, bicchieri e boccali e gadgettistica."
             category="Servizi"
             links={[
               { href: '/', label: 'Home' },
@@ -71,7 +71,7 @@ export default function NoleggioAttrezzature({ productsData }) {
           />
 
           <ServicePhotoDescription
-            title='Se stai per organizzare un evento per il tuo bar/ristorante o una festa per la tua attività?'
+            title='Se stai per organizzare un evento sul tuo lovale, una manifestazione o un evento privato'
             description='Enomarket ti può offrire il noleggio di tutte le attrezzature e materiali che hai bisogno, la consulenza e l’assistenza tecnica necessaria per l’intero corso della tua manifestazione.'
             photo='/images/servizi-noleggio_attrezzature1.jpg'
             order={1}

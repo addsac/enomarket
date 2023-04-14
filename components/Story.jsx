@@ -25,7 +25,7 @@ export default function Story() {
                 <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                     <div className="w-full h-px bg-gray-300"></div>
                     <p className="text-25 font-family-lora md:pr-8">
-                        Da più di 50 anni, noi di Enomarket ci occupiamo di distriubuire alle aziende del Nord Italia i migiori marchi di vini, birre, distillati e beverage provenienti tutto il mondo.
+                        Da più di 50 anni, noi di Enomarket ci occupiamo di distriubuire i migiori marchi di vini, birre, distillati e beverage provenienti tutto il mondo.
                         Siamo inoltre specializzati in servizi come il noleggio di attrezzature e installazioni di impianti di spillatura.
                     </p>
                 </div>
@@ -41,21 +41,21 @@ export default function Story() {
                         <div className="w-full h-px bg-gray-300"></div>
                         <p className="text-25 font-family-lora leading-[140%]"> 800+ Prodotti in catalogo </p>
                         <p className="text-14 text-gray-700">
-                            Abbiamo disponibili in catalogo più di 800 prodotti, tra cui vini, birre, distillati e beverage provenienti dai più grandi marchi tutto il mondo, per soddisfare le esigenze dei clienti più esigenti. 
+                        Abbiamo disponibili in catalogo più di 800 prodotti, tra cui vini, birre, distillati e beverage provenienti dai più grandi Brand di tutto il mondo, per garantire alta qualità e un’ottima varietà.
                         </p>
                     </div>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
                         <p className="text-25 font-family-lora leading-[140%]"> Servizi di spillatura e noleggio </p>
                         <p className="text-14 text-gray-700">
-                            Oltre al catalogo prodotti, offriamo servizi in sede e fuori sede di noleggio attrezzature da bar per le tue feste e la vendita e manuetzione di impianti di spillatura professionale.
+                            Installiamo impianti di Spillatura in comodato d’uso gratuito. Riforniamo il tuo Evento di varie attrezzature sia in comodato d’uso, che a noleggio.
                         </p>
                     </div>
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                         <div className="w-full h-px bg-gray-300"></div>
-                        <p className="text-25 font-family-lora leading-[140%]"> Corso di formazione gratuiti </p>
+                        <p className="text-25 font-family-lora leading-[140%]"> Corso di formazione </p>
                         <p className="text-14 text-gray-700">
-                            Per i nostri clienti, offriamo corsi gratuiti di formazione per la preparazione di spirits, per la miscelatura, e per servizi di splillatura professionale. 
+                            Per i nostri clienti, offriamo corsi gratuiti di formazione per la preparazione di spirits, per la miscelatura, e per servizi di splillatura professionale.
                         </p>
                     </div>
                 </div>

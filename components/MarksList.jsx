@@ -10,14 +10,14 @@ export default function MarksList({ marks = [] }) {
         {marks.map((item, index) => (
             <div 
                 key={item.fields.nome + '-' + index}
-                className="relative col-span-6 md:col-span-4 p-8 lg:p-16 2xl:p-32 aspect-square bg-white border border-gray-300 group flex-center"
+                className="relative col-span-6 md:col-span-4 xl:col-span-3 p-8 lg:p-16 2xl:p-32 aspect-square bg-white border border-gray-300 group flex-center"
             >
                 <Image
                     src={'https:'+item.fields.foto.fields.file.url}
                     width="250"
                     height="250"
                     alt={item.fields.nome + ' marchio disponibile su Enomarket '}
-                    className="h-auto w-full md:w-2/3 lg:w-1/2 max-w-[100px] lg:max-w-[250px] max-h-[100px] lg:max-h-[250px]" 
+                    className="h-auto w-full max-w-[100px] lg:max-w-[250px] max-h-[100px] lg:max-h-[250px]" 
                 />
 
                 {/* hoverlay on hover */}

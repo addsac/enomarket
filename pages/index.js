@@ -58,7 +58,7 @@ export default function Home({ sliderData, productsData }) {
         <Products 
           subtitle="I nostri Prodotti"
           title="La nostra selezione tra i migliori brand"
-          description="Selezioniamo con cura i migliori prodotti da tutto il mondo per permette di creare nei locali Italiani una carta dei vini e bevande completa e apprezzabile, rendendo unica l’esperienza dei nostri clienti e dei loro locali."
+          description="Selezioniamo con cura i migliori prodotti da tutto il mondo per permette di creare nei locali una carta vini e bevande completa e apprezzabile, rendendo unica l’esperienza."
           array={productsData}
         />
 

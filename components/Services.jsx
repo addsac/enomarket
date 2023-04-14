@@ -2,6 +2,7 @@ import Container from '@/components/Container'
 import Image from 'next/image'
 import ButtonPrimary from '@/components/ui/ButtonPrimary'
 import Link from 'next/link'
+import Balancer from 'react-wrap-balancer'
 
 export default function Services({ subtitle, title, description }) {
   return (
@@ -11,7 +12,11 @@ export default function Services({ subtitle, title, description }) {
             <p className='text-12 lg:text-14 uppercase font-medium font-family-montserrat tracking-wider'> { subtitle } </p>
             <div className="w-full h-px bg-gray-300"></div>
             <div className="w-full lg:w-1/2 grid grid-cols-12 gap-x-6 gap-y-10">
-                <p className="col-span-12 text-28 lg:text-44 font-family-lora leading-[150%]"> { title } </p>
+                <p className="col-span-12 text-28 lg:text-44 font-family-lora leading-[150%]"> 
+                  <Balancer>
+                    { title }
+                  </Balancer>
+                </p>
                 <p className="col-span-12 text-16 text-gray-700"> { description } </p>
             </div>
         </div>
