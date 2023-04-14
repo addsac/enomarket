@@ -10,9 +10,10 @@ import 'swiper/css/grid'
 export default function SliderNoleggioAttrezzature() {
   const imagesSwiperGrid = [
     '/images/swiper-grid-attrezzature-1.jpg',
-    '/images/swiper-grid-attrezzature-2.png',
-    '/images/swiper-grid-attrezzature-3.png',
+    // '/images/swiper-grid-attrezzature-2.png',
+    // '/images/swiper-grid-attrezzature-3.png',
     '/images/swiper-grid-attrezzature-4.jpg',
+    '/images/swiper-grid-attrezzature-5.jpg',
   ]
 
   return (
