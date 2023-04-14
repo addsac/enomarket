@@ -34,12 +34,17 @@ export default function Footer({ products }) {
                             <Link href='/servizi/noleggio-attrezzature' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Noleggio attrezature
                             </Link>
-                            <Link href='#' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            <Link 
+                                href='https://enomarket.roadwarrior.it' 
+                                target='_blank' 
+                                rel='nofollow'
+                                className="text-14 lg:text-16 text-gray-400 hover:text-white"
+                            > 
                                 Shop online
                             </Link>
-                            <Link href='/policy' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                            {/* <Link href='/policy' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Privacy policy
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
@@ -85,7 +90,7 @@ export default function Footer({ products }) {
                             <Link
                                 href="https://pegasodigitalstudio.com"
                                 target={'_blank'}
-                                rel="noreferrer"
+                                rel="nofollow"
                                 className='font-family-montserrat uppercase text-14 text-gray-300 hover:text-white hover:underline'
                             >
                                 Sito by Pegaso

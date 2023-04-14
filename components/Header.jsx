@@ -281,7 +281,13 @@ export default function Header({ products }) {
                         <IconMenu />
                     </span>
                 </button>
-                <button className='hidden lg:block button-text'>Shop</button>
+                <Link 
+                    href='https://enomarket.roadwarrior.it' 
+                    target='_blank' 
+                    className='hidden lg:block button-text'
+                >
+                        Shop
+                </Link>
                 {headerState == '1' ? (
                     <ButtonSecondary text='Contattaci' href="/contatti" size={'sm'} />
                 ) : (
