@@ -34,6 +34,9 @@ export default function Footer({ products }) {
                             <Link href='/servizi/noleggio-attrezzature' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
                                 Noleggio attrezature
                             </Link>
+                            <Link href='/policy' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
+                                Privacy policy
+                            </Link>
                             <Link 
                                 href='https://enomarket.roadwarrior.it' 
                                 target='_blank' 
@@ -42,9 +45,6 @@ export default function Footer({ products }) {
                             > 
                                 Shop online
                             </Link>
-                            {/* <Link href='/policy' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
-                                Privacy policy
-                            </Link> */}
                         </div>
                     </div>
                     <div className="col-span-6 lg:col-span-2 flex flex-col gap-y-6">
