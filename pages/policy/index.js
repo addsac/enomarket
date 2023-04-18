@@ -28,7 +28,7 @@ export default function Home({ productsData }) {
                 <Spacing height={24} />
                 
                 <p className="text-18 leading-[170%]">
-                    Welcome to Enomarket's privacy policy for our website.
+                    Welcome to Enomarket&apos;s privacy policy for our website.
                     This policy explains how we collect, use, and protect
                     your personal information when you use our services. We
                     take your privacy seriously, and we are committed to
