@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formcarry/react": "^1.0.4",
     "@next/font": "^13.1.6",
     "@sendgrid/mail": "^7.7.0",
     "contentful": "^9.3.3",

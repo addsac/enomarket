@@ -1,7 +1,7 @@
 import Link from "next/link";
 import IconLoading from "../../public/icons/icon-loading.svg";
 
-export default function ButtonPrimary({ text, href, size, white = false, handleClick, loading = 'false' }) {
+export default function ButtonPrimary({ text, href, size, white = false, handleClick, loading = 'false', type = null }) {
   return (
     <>
       { href && (
@@ -19,7 +19,8 @@ export default function ButtonPrimary({ text, href, size, white = false, handleC
       )}
 
       { !href && 
-        <button 
+        <button
+          type={type}
           onClick={handleClick}
           className={`
             font-family-montserrat tracking-wider

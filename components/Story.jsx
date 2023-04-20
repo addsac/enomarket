@@ -27,8 +27,11 @@ export default function Story() {
                 <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                     <div className="w-full h-px bg-gray-300"></div>
                     <p className="text-25 font-family-lora md:pr-8">
-                        Da più di 50 anni, noi di Enomarket ci occupiamo di distriubuire i migiori marchi di vini, birre, distillati e beverage provenienti tutto il mondo.
-                        Siamo inoltre specializzati in servizi come il noleggio di attrezzature e installazioni di impianti di spillatura.
+                        Da più di 50 anni, noi di Enomarket ci occupiamo di 
+                        distribuire i migliori marchi di vini, birre, distillati e 
+                        beverage provenienti da tutto il mondo. Siamo inoltre
+                        specializzati in servizi come il noleggio di attrezzature e 
+                        installazioni di impianti di spillatura.
                     </p>
                 </div>
                 <div className='col-span-12 lg:col-span-6 grid grid-cols-12 gap-x-6 gap-y-10'>

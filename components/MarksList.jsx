@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import IconArrowRight from '../public/icons/chev-right.svg'
+// import IconArrowRight from '../public/icons/chev-right.svg'
 
 export default function MarksList({ marks = [] }) {
   return (
@@ -10,14 +10,14 @@ export default function MarksList({ marks = [] }) {
         {marks.map((item, index) => (
             <div 
                 key={item.fields.nome + '-' + index}
-                className="relative col-span-6 md:col-span-4 xl:col-span-3 p-8 lg:p-16 aspect-square bg-white border border-gray-300 group flex-center"
+                className="relative col-span-6 md:col-span-4 lg:col-span-3 2xl:col-span-2 p-4 aspect-square bg-white border border-gray-300 group flex-center"
             >
                 <Image
                     src={'https:'+item.fields.foto.fields.file.url}
                     width="250"
                     height="250"
                     alt={item.fields.nome + ' marchio disponibile su Enomarket '}
-                    className="h-auto w-full max-w-[100px] lg:max-w-[250px] max-h-[100px] lg:max-h-[250px]" 
+                    className="h-auto max-h-full w-full" 
                 />
 
                 {/* hoverlay on hover */}
