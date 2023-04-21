@@ -3,6 +3,7 @@ import ModalFormSuccess from '@/components/ModalFormSuccess'
 import ButtonPrimary from './ui/ButtonPrimary'
 import { useRef, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Contact() {
   const fullname = useRef()
@@ -140,7 +141,7 @@ export default function Contact() {
                 disabled={loading}
               />
               <p className="text-center text-14 text-gray-500">
-                Inviando il messaggio accetti i termini e di essere ricontattato
+                Inviando il messaggio accetti i <Link href='/policy' className='underline'>termini</Link> e di essere ricontattato
               </p>
             </div>
           </div>

@@ -142,7 +142,7 @@ export default function Header({ products }) {
                     <motion.div 
                         animate={modalMobileProductListBool ? 'visible' : 'hidden'}
                         variants={variantsModalProductMobile}
-                        className='flex flex-col pl-5 text-18'
+                        className={`flex flex-col pl-5 text-18 ${!modalMobileProductListBool ? 'hidden' : ''}`}
                     >   
                         {products.map((product) => (
                             <div 
