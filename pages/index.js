@@ -38,17 +38,17 @@ export default function Home({ sliderData, productsData }) {
             {
               icon: 'pin',
               title: 'Consegne a Padova, Vicenza, Treviso',
-              description: 'Il servizio và oltre la consegna della bottiglia: visite in cantina, incontri con il produttore, possibilità di toccare il prodotto con mano; consulenza sul vino, produzione di carte vino, formazione del personale'
+              description: 'Il nostro servizio va oltre la consegna della merce organizzando anche visite in cantina, incontri con il produttore, possibilità di toccare il prodotto con mano e consulenza sul vino. A ciò si aggiungono la produzione di carte vino e la formazione del personale.'
             },
             {
               icon: 'shield',
               title: 'Alta qualità dei prodotti garantita',
-              description: 'Mettiamo a disposizione dei nostri clienti il meglio che il mercato offre. Oltre alle cantine più blasonate e alle birre e agli spirit più sofisticati, proponiamo la nostra selezione che interpreta la cultura del bere bene. Piccoli birrifici artigianali, micro cantine, distillatori che lavorano con metodi ancestrali.'
+              description: 'Mettiamo a disposizione dei nostri clienti il meglio che il mercato possa offrire. Oltre alle cantine più blasonate, alle birre e agli spirits più sofisticati proponiamo la nostra selezione che interpreta in pieno la cultura del “bere bene”. Piccoli birrifici artigianali, micro cantine e distillatori che lavorano con metodi ancestrali rientrano nel nostro patrimonio di valori.'
             },
             {
               icon: 'clock',
               title: 'Professionalità e precisione nelle consegne',
-              description: 'Consegniamo i nostri prodotti in 1/3 giorni gestite con i nostri mezzi aziendali interni all’ azienda per garantire affidabilità ed un servizio sempre puntuale per il cliente.'
+              description: 'Consegniamo i prodotti nell’arco di 1 o 3 giorni gestendo il trasporto con nostri mezzi aziendali per garantire la massima affidabilità e un servizio sempre puntuale per il cliente.'
             },
           ]}
         />
@@ -58,7 +58,7 @@ export default function Home({ sliderData, productsData }) {
         <Products 
           subtitle="I nostri Prodotti"
           title="La nostra selezione tra i migliori brand"
-          description="Selezioniamo con cura i migliori prodotti da tutto il mondo per permette di creare nei locali una carta vini e bevande completa e apprezzabile, rendendo unica l’esperienza."
+          description="Selezioniamo con cura i migliori prodotti provenienti da tutto il mondo per consentirvi di creare nei locali una carta vini e bevande completa e apprezzabile, rendendo unica l’esperienza per la clientela."
           array={productsData}
         />
 
@@ -67,7 +67,7 @@ export default function Home({ sliderData, productsData }) {
         <Services 
           subtitle="I Serivizi"
           title="I nostri Servizi e consulenze per il mondo Horeca"
-          description="La capacità di seguire i bisogni del cliente sin dalla progettazione,la professionalità di un servizio efficiente, la competenza di professionisti per dare il massimo al successo del tuo locale."
+          description="La capacità di perseguire i bisogni del cliente sin dalla progettazione, la professionalità di un servizio efficiente e la competenza nel settore per garantire il massimo successo al tuo locale."
         />
 
         <Spacing height={125} />

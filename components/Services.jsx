@@ -36,7 +36,7 @@ export default function Services({ subtitle, title, description }) {
 
                 <div className="flex flex-col gap-y-6">
                   <p className='text-28 lg:text-44 font-family-lora leading-[150%]'> Impianti di spillatura </p>
-                  <p className='text-16 text-gray-700'> Siamo esperti all’installazione, all’assistenza e alle sanificazioni periodiche di impianti di spillatura per il tuo locale. </p>
+                  <p className='text-16 text-gray-700'> Siamo esperti in installazione e assistenza oltre alle sanificazioni periodiche degli impianti di spillatura. </p>
                   <div className="lg:mt-8">
                     <ButtonPrimary 
                       text="Scopri di più"
@@ -58,7 +58,7 @@ export default function Services({ subtitle, title, description }) {
 
                 <div className="flex flex-col gap-y-6">
                   <p className='text-28 lg:text-44 font-family-lora leading-[150%]'> Noleggio attrezzature </p>
-                  <p className='text-16 text-gray-700'> Offiramo un servizio di noleggio di attrezzature da ristorazione e materiali a supporto per feste o eventi. </p>
+                  <p className='text-16 text-gray-700'> Offriamo il servizio di noleggio attrezzature da ristorazione e forniamo materiali di supporto per feste ed eventi. </p>
                   <div className="lg:mt-8">
                     <ButtonPrimary 
                       text="Scopri di più"
