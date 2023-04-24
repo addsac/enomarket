@@ -68,7 +68,7 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: data
+        body: JSON.stringify(data)
       })
       .then(res => res.json())
       .then(data => {
