@@ -29,6 +29,6 @@ export default async function handler(req, res) {
   })
   .catch((error) => {
     console.log(error)
-    return res.status(400).json({ message: 'Errore nell\'invio della mail.' + err });
+    return res.status(400).json({ message: 'Errore nell\'invio della mail.' + error });
   })
 }
