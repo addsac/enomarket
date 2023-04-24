@@ -51,7 +51,7 @@ export default function Footer({ products }) {
                         <p className="text-decoration-wide font-family-montserrat text-white"> Dove trovarci </p>
                         <div className='flex flex-col gap-y-4'>
                             <Link href="https://goo.gl/maps/wyfBuBSZE3s7tw8x9" target="_blank" rel='nofollow' className="text-14 lg:text-16 text-gray-400 hover:text-white"> 
-                                Fontaniva (PD) <br /> via Chiesa 107, <br /> Italia - 35014 
+                                Fontaniva (PD) <br /> via Chiesa 108, <br /> Italia - 35014 
                             </Link>
                             <p className="text-14 lg:text-16 text-gray-400"> 
                                 Da lunedì al venerdì:  <br /> 9.00 - 13.00 | 14.00 - 18.30

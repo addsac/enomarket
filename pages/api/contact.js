@@ -12,8 +12,8 @@ export default async function handler(req, res) {
     messaggio: ${message} <br />
   `
   const data = {
-    to: 'info@enomarket.eu',
-    from: 'info@enomarket.eu',
+    to: 'leociton@gmail.com',
+    from: 'enomarketformail@gmail.com',
     subject: `New message from ${fullname} (company: ${company_name})`,
     text: fullText,
     html: fullText.replace(/\r\n/g, '<br />'),
