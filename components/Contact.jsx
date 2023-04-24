@@ -68,7 +68,7 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: data
       })
       .then(res => res.json())
       .then(data => {
@@ -77,7 +77,7 @@ export default function Contact() {
         setTimeout(() => {
           setModalSuccessBool(true)
           setLoading('false')
-        }, 3000)
+        }, 1000)
       })
       .catch(err => {
         console.log(err)

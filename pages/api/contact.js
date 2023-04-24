@@ -11,6 +11,9 @@ export default async function handler(req, res) {
     email: ${email}, <br />
     messaggio: ${message} <br />
   `
+
+  console.log(fullText)
+
   const data = {
     to: 'info@enomarket.eu',
     from: 'enomarketformail@gmail.com',
@@ -22,12 +25,10 @@ export default async function handler(req, res) {
   await mail.send(data)
   .then((res) => {
     console.log('Email sent:', res)
-    console.log(res.errors.body)
+    return res.status(200).json({ message: 'Email inviata correttamente.' });
   })
   .catch((error) => {
     console.log(error)
-    console.log(error.errors.body)
+    return res.status(400).json({ message: 'Errore nell\'invio della mail.' + err });
   })
-
-  res.status(200).json({ status: 'OK' })
 }
