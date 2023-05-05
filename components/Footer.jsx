@@ -54,7 +54,10 @@ export default function Footer({ products }) {
                                 Fontaniva (PD) <br /> via Chiesa 108, <br /> Italia - 35014 
                             </Link>
                             <p className="text-14 lg:text-16 text-gray-400"> 
-                                Da lunedì al venerdì:  <br /> 9.00 - 13.00 | 14.00 - 18.30
+                                Da lunedì al venerdì:  <br /> 8.00 - 12.00 | 14.30 - 18.00
+                            </p>
+                            <p className="text-14 lg:text-16 text-gray-400"> 
+                                Sabato:  <br /> 9.00 - 12.00
                             </p>
                         </div>
                     </div>
@@ -83,7 +86,7 @@ export default function Footer({ products }) {
                 {/* Company data and social links */}
                 <div className='grid grid-cols-12 gap-x-6 gap-y-16 items-start'>
                         <p className='col-span-12 lg:col-span-4 text-14 text-gray-400'>
-                            © 2020 ENOMARKET S.R.L. - via Chiesa 108, Italia - 35014 Fontaniva (PD) | P.Iva e C.F. 00606470284 - REA 1282789
+                            © 2020 ENOMARKET S.N.C. - via Chiesa 108, Italia - 35014 Fontaniva (PD) | P.Iva e C.F. 00606470284 - REA 1282789
                         </p>
 
                         <div className='col-span-12 lg:col-span-8 flex lg:justify-end gap-x-6'>

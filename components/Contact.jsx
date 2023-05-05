@@ -155,6 +155,7 @@ export default function Contact() {
             <div className="flex flex-col gap-y-4">
               <p className="text-decoration-wide font-family-montserrat"> Orari </p>
               <p className="text-gray-700"> Da lunedì al venerdì: <br /> 8.00 - 12.00 | 14.30 - 18.00 </p>
+              <p className="text-gray-700"> Sabato: <br /> 9.00 - 12.00 </p>
             </div>
             <div className="flex flex-col gap-y-4">
               <p className="text-decoration-wide font-family-montserrat"> Contatti </p>
