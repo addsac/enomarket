@@ -84,7 +84,7 @@ export default function Story() {
                 >
                     {imagesSwiperGrid.map((item, index) => (
                         <SwiperSlide key={'photo-slider-story-'+index} className='h-full bg-gray-100 !mt-0'>
-                            <Image src={item} alt={'Enomarket story ' + index} width='1000' height='1000' className='w-full h-full object-cover' />
+                            <img src={item} alt={'Enomarket story ' + index} width='1000' height='1000' className='w-full h-full object-cover' />
                         </SwiperSlide>
                     ))}
                 </Swiper>

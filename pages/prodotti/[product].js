@@ -157,7 +157,7 @@ export default function Product({ product, productsList, marks = [], productPare
 
                     {/* main image */}
                     <div className="w-full h-[400px] lg:h-[800px]">
-                      <Image
+                      <img
                         src={'https:'+product[0].fields.foto.fields.file.url}
                         width="800" 
                         height="800" 
@@ -194,7 +194,7 @@ export default function Product({ product, productsList, marks = [], productPare
                     {/* main image */}
                     {product[0]?.fields?.fotoProdotto?.fields.file.url && (
                       <div className="w-full h-[400px] lg:h-[800px]">
-                        <Image
+                        <img
                           src={'https:' + product[0].fields.fotoProdotto.fields.file.url}
                           width="800" 
                           height="800" 
@@ -233,7 +233,7 @@ export default function Product({ product, productsList, marks = [], productPare
 
                 {/* main image */}
                 <div className="w-full h-[400px] lg:h-[800px]">
-                  <Image
+                  <img
                     src={'https:'+product[0].fields.fotoProdotto.fields.file.url}
                     width="800" 
                     height="800" 
@@ -262,7 +262,7 @@ export default function Product({ product, productsList, marks = [], productPare
                         href={'/prodotti/'+item.fields.nome.replace(' ', '-').toLowerCase()}
                         className='bg-gray-700 w-full h-[300px] lg:h-[600px] overflow-clip group cursor-pointer'
                       >
-                        <Image 
+                        <img 
                           src={'https:'+item.fields.foto.fields.file.url} 
                           alt={item.fields.foto.fields.file.name}
                           width="600"

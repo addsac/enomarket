@@ -36,7 +36,7 @@ export default function Products({ subtitle, title, description, array }) {
                         href={'/prodotti/'+item.fields.nome.replace(' ', '-').toLowerCase()}
                         className='bg-gray-700 w-full h-[300px] lg:h-[600px] overflow-clip group cursor-pointer'
                     >
-                        <Image 
+                        <img 
                             src={'https:'+item.fields.foto.fields.file.url} 
                             alt={item.fields.foto.fields.file.name}
                             width="600"

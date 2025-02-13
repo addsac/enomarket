@@ -37,7 +37,7 @@ export default function ServicePhotoDescription({ title = '', description = '', 
         <div className={(order == 1 ? 'order-2 mt-16 lg:mt-0' : 'order-1 mb-16 lg:mb-0') + ' h-auto p-8 md:px-0 py-8 md:py-[64px] lg:py-[125px] col-span-12 lg:col-span-6 grid grid-cols-6 gap-6 items-center justify-center bg-yellow-100/50'}>
             <div className="col-span-1"></div>
             <div className="col-span-6 lg:col-span-4 bg-gray-900 overflow-clip">
-                <Image src={photo} alt="" height="600" width="600" className="w-full h-80 md:h-full object-cover" />
+                <img src={photo} alt="" height="600" width="600" className="w-full h-80 md:h-full object-cover" />
             </div>
             <div className="col-span-1"></div>
         </div>

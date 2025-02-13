@@ -40,7 +40,7 @@ export default function ImpiantiDiSpillatura({ productsData }) {
 
           {/* main image */}
           <div className="w-full h-[400px] lg:h-[800px]">
-            <Image
+            <img
               src="/images/servizi-impianti_di_spillatura.jpg" 
               width="800" 
               height="800" 

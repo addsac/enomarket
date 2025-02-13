@@ -12,7 +12,7 @@ export default function MarksList({ marks = [] }) {
                 key={item.fields.nome + '-' + index}
                 className="relative col-span-6 md:col-span-4 lg:col-span-3 2xl:col-span-2 p-4 aspect-square bg-white border border-gray-300 group flex-center"
             >
-                <Image
+                <img
                     src={'https:'+item.fields.foto.fields.file.url}
                     width="250"
                     height="250"

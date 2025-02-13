@@ -25,7 +25,7 @@ export default function Services({ subtitle, title, description }) {
         <div className='grid grid-cols-12 gap-x-6 gap-y-[80px]'>
             <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                 <Link href="/servizi/impianti-di-spillatura" className='h-[320px] lg:h-[460px] w-full bg-gray-700 group overflow-clip cursor-pointer'>
-                  <Image 
+                  <img 
                     src="/images/servizi-impianti_di_spillatura.jpg"
                     alt="Enomarket - Servizi - Impianti di spillatura"
                     width="600"
@@ -47,7 +47,7 @@ export default function Services({ subtitle, title, description }) {
             </div>
             <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-10">
                 <Link href="/servizi/noleggio-attrezzature" className='h-[320px] lg:h-[460px] w-full bg-gray-700 group overflow-clip cursor-pointer'>
-                  <Image 
+                  <img 
                     src="/images/servizi-noleggio_attrezzature.jpg"
                     alt="Enomarket - Servizi - Noleggio attrezzature"
                     width="600"

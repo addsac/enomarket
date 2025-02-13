@@ -43,7 +43,7 @@ export default function SliderNoleggioAttrezzature() {
                     {imagesSwiperGrid.map((item, index) => (
                         <>
                             <SwiperSlide key={'photo-slider-story-'+index} className='h-full bg-white border border-gray-300 p-4 lg:py-8 !mt-0'>
-                                <Image src={item} alt={'Enomarket noleggio materiali ' + index} width='600' height='600' className='mx-auto w-auto max-w-full max-h-full h-full object-cover' />
+                                <img src={item} alt={'Enomarket noleggio materiali ' + index} width='600' height='600' className='mx-auto w-auto max-w-full max-h-full h-full object-cover' />
                             </SwiperSlide>
                         </>
                     ))}

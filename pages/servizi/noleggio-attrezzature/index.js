@@ -41,7 +41,7 @@ export default function NoleggioAttrezzature({ productsData }) {
 
           {/* main image */}
           <div className="w-full h-[400px] lg:h-[800px]">
-            <Image
+            <img
               src="/images/servizi-noleggio_attrezzature3.jpg"
               width="800" 
               height="800" 
